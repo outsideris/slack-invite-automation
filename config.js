@@ -5,6 +5,11 @@ module.exports = {
   slackUrl: 'YOUR-TEAM.slack.com',
   // access token of slack
   // You can generate it in https://api.slack.com/web#auth
+  //
+  // You can test your token via curl:
+  //   curl -X POST 'https://YOUR-SLACK-TEAM.slack.com/api/users.admin.invite' \
+  //   --data 'email=EMAIL&channels=CHANNEL_ID&token=TOKEN&set_active=true' \
+  //   --compressed
   slacktoken: 'YOUR-ACCESS-TOKEN',
   // channels to join when the user is invited.(Array of channel-id)
   // You can find id of channels in your slack.(look at sidebar on the left)
