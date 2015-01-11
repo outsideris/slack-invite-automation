@@ -1,6 +1,17 @@
-extends layout
-
-block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+doctype html
+html
+  head
+    title Join the #{community} community on Slack!
+    style.
+      body {
+        padding: 50px;
+        font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+      }
+      input {
+        font-size: 24px;
+        width: 400px;
+      }
+  body
+    h1= message
+    h2= error.status
+    pre #{error.stack}

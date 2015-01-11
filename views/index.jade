@@ -1,5 +1,25 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+html
+  head
+    title Join the #{community} community on Slack!
+    style.
+      body {
+        padding: 50px;
+        font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+      }
+      input {
+        font-size: 24px;
+        width: 400px;
+      }
+  body
+    h1 Join the #{community} community on Slack!
+    form(method="POST", action="/invite")#join-form
+      input(type="text", name="email", placeholder="Enter your email")#slack-email
+    script.
+      var form = document.getElementById('join-form');
+      var email = document.getElementById('slack-email')
+      form.addEventListener('submit', function(evt) {
+        if (!email.value) {
+          evt.preventDefault();
+        }
+      });
