@@ -8,19 +8,7 @@ module.exports = {
   //
   // You can test your token via curl:
   //   curl -X POST 'https://YOUR-SLACK-TEAM.slack.com/api/users.admin.invite' \
-  //   --data 'email=EMAIL&channels=CHANNEL_ID&token=TOKEN&set_active=true' \
+  //   --data 'email=EMAIL&token=TOKEN&set_active=true' \
   //   --compressed
-  slacktoken: 'YOUR-ACCESS-TOKEN',
-  // channels to join when the user is invited.(Array of channel-id)
-  // You can find id of channels in your slack.(look at sidebar on the left)
-  // channel list's HTML looks like:
-  //   <li class="channel_C024R4462 channel ">
-  //     <a class="channel_name" data-channel-id="C024R4462">
-  //       <span class="unread_just_C024R4462 unread_just hidden">0</span>
-  //       <span class="unread_highlight_C024R4462 unread_highlight hidden">0</span>
-  //       <span class="overflow-ellipsis"><span class="prefix">#</span>codeport</span>
-  //     </a>
-  //   </li>
-  // "C024R4462" is channel id(in data-channel-id)
-  channels: ["CHANNEL-ID", "CHANNEL-ID"].join(',')
+  slacktoken: 'YOUR-ACCESS-TOKEN'
 };

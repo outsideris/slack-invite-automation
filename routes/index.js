@@ -13,15 +13,12 @@ router.post('/invite', function(req, res) {
         url: 'https://'+ config.slackUrl + '/api/users.admin.invite',
         form: {
           email: req.body.email,
-          channels: config.channels,
           token: config.slacktoken,
           set_active: true
         }
       }, function(err, httpResponse, body) {
         // body looks like:
         //   {"ok":true}
-        //       or
-        //   {"ok":false,"error":"channel_not_found"}
         //       or
         //   {"ok":false,"error":"already_invited"}
         if (err) { return res.send('Error:' + err); }
