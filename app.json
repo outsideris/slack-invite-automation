@@ -1,0 +1,20 @@
+{
+  "name": "Slack Invite Automation",
+  "description": "A tiny web application to invite a user info your slack team.",
+  "repository": "https://github.com/outsideris/slack-invite-automation",
+  "keywords": ["node", "slack", "invite"],
+  "env": {
+    "COMMUNITY_NAME": {
+      "description": "Your team name",
+      "value": "YOUR TEAM NAME"
+    },
+    "SLACK_URL": {
+      "description": "Your slack url(ex: socketio.slack.com)",
+      "value": "YOUR-TEAM.slack.com"
+    },
+    "SLACK_TOKEN": {
+      "description": "access token of slack, You can generate it in https://api.slack.com/web#auth",
+      "value": ""
+    }
+  }
+}

@@ -8,6 +8,8 @@ Inspired by
 and
 [Socket.io's slack page](http://socket.io/slack/).
 
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 ## Setting
 fill out `config.js` as your infomation.
 
