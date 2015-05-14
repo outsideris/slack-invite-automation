@@ -13,7 +13,7 @@ and
 ## Setting
 fill out `config.js` as your infomation.
 
-* `community`: your cummunity or team name to display on join page.
+* `community`: your community or team name to display on join page.
 * `slackUrl` : your slack team url (ex: socketio.slack.com)
 * `slacktoken` : access token of slack.
   You can generate it in <https://api.slack.com/web#auth>
