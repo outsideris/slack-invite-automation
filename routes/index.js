@@ -43,6 +43,9 @@ router.post('/invite', function(req, res) {
             case 'already_in_team':
               errorResp = 'Você já faz parte do time!';
               break;
+            case 'already_invited':
+              errorResp = 'Você já foi convidado utilizando este endereço de e-mail!';
+              break;
             case 'invalid_email':
               errorResp = 'Utilize um e-mail válido!';
               break;
