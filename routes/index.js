@@ -4,7 +4,11 @@ var request = require('request');
 var config = require('../config');
 
 router.get('/', function(req, res) {
-  res.render('index', { community: config.community });
+  res.render('index', {
+    community: config.community,
+    success: '',
+    message: ''
+  });
 });
 
 router.post('/invite', function(req, res) {
@@ -21,16 +25,42 @@ router.post('/invite', function(req, res) {
         //   {"ok":true}
         //       or
         //   {"ok":false,"error":"already_invited"}
-        if (err) { return res.send('Erro:' + err); }
+        if (err) {
+          return res.send('Erro:' + err);
+        }
+
         body = JSON.parse(body);
+
         if (body.ok) {
-          res.send('Parabéns! Verifique o email "'+ req.body.email +'" para aceitar o convite do Slack.');
+          res.render('index', {
+            community: config.community,
+            success: 1,
+            message: 'Parab&eacute;ns! Verifique o email "' + req.body.email + '" para aceitar o convite do Slack.'
+          });
         } else {
-          res.send('Erro! ' + body.error)
+          var errorResp;
+          switch(body.error) {
+            case 'already_in_team':
+              errorResp = 'Voc&ecirc; j&aacute; faz parte do time!';
+              break;
+            case 'invalid_email':
+              errorResp = 'Utilize um e-mail v&aacute;lido!';
+              break;
+
+            default:
+              errorResp = 'Erro! ' + body.error;
+              break;
+          }
+
+          res.render('index', {
+            community: config.community,
+            success: 0,
+            message: errorResp
+          });
         }
       });
   } else {
-    res.status(400).send('Email é Obrigatório.');
+    res.status(400).send('Email &eacute; obrigat&oacute;rio.');
   }
 });
 

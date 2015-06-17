@@ -10,17 +10,32 @@ html
       input {
         font-size: 24px;
       }
+      .success {
+        font-weight: 700;
+        color: green;
+      }
+      .error {
+        font-weight: 700;
+        color: red;
+      }
   body
     h1 Entre na comunidade #{community} no Slack!
     p Vale lembrar que não oferecemos suporte nesse canal
-    form(method="POST", action="/invite")#join-form
-      input(type="text", name="email", placeholder="Informe seu email")#slack-email
-      input(type="submit", name="submit", value="Entrar")#slack-submit
-    script.
-      var form = document.getElementById('join-form');
-      var email = document.getElementById('slack-email')
-      form.addEventListener('submit', function(evt) {
-        if (!email.value) {
-          evt.preventDefault();
-        }
-      });
+    if success === 1
+      div.success
+        p #{message}
+    else
+      if success === 0
+        div.error
+          p #{message}
+      form(method="POST", action="/invite")#join-form
+        input(type="text", name="email", placeholder="Informe seu email")#slack-email
+        input(type="submit", name="submit", value="Entrar")#slack-submit
+      script.
+        var form = document.getElementById('join-form');
+        var email = document.getElementById('slack-email')
+        form.addEventListener('submit', function(evt) {
+          if (!email.value) {
+            evt.preventDefault();
+          }
+        });
