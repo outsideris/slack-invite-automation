@@ -13,6 +13,7 @@ html
       }
   body
     h1 Entre na comunidade #{community} no Slack!
+    p Vale lembrar que não oferecemos suporte nesse canal
     form(method="POST", action="/invite")#join-form
       input(type="text", name="email", placeholder="Informe seu email")#slack-email
     script.
