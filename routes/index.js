@@ -35,16 +35,16 @@ router.post('/invite', function(req, res) {
           res.render('index', {
             community: config.community,
             success: 1,
-            message: 'Parab&eacute;ns! Verifique o email "' + req.body.email + '" para aceitar o convite do Slack.'
+            message: 'Parabéns! Verifique o email "' + req.body.email + '" para aceitar o convite do Slack.'
           });
         } else {
           var errorResp;
           switch(body.error) {
             case 'already_in_team':
-              errorResp = 'Voc&ecirc; j&aacute; faz parte do time!';
+              errorResp = 'Você já faz parte do time!';
               break;
             case 'invalid_email':
-              errorResp = 'Utilize um e-mail v&aacute;lido!';
+              errorResp = 'Utilize um e-mail válido!';
               break;
 
             default:
@@ -60,7 +60,7 @@ router.post('/invite', function(req, res) {
         }
       });
   } else {
-    res.status(400).send('Email &eacute; obrigat&oacute;rio.');
+    res.status(400).send('Email é obrigatório.');
   }
 });
 
