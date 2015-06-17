@@ -21,16 +21,16 @@ router.post('/invite', function(req, res) {
         //   {"ok":true}
         //       or
         //   {"ok":false,"error":"already_invited"}
-        if (err) { return res.send('Error:' + err); }
+        if (err) { return res.send('Erro:' + err); }
         body = JSON.parse(body);
         if (body.ok) {
-          res.send('Success! Check "'+ req.body.email +'" for an invite from Slack.');
+          res.send('Parabéns! Verifique o email "'+ req.body.email +'" para aceitar o convite do Slack.');
         } else {
-          res.send('Failed! ' + body.error)
+          res.send('Erro! ' + body.error)
         }
       });
   } else {
-    res.status(400).send('email is required.');
+    res.status(400).send('Email é Obrigatório.');
   }
 });
 
