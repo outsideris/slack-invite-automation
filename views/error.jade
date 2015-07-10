@@ -1,16 +1,6 @@
 doctype html
 html
-  head
-    title Entre na comunidade #{community} no Slack!
-    style.
-      body {
-        padding: 50px;
-        font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-      }
-      input {
-        font-size: 24px;
-        width: 400px;
-      }
+  include ./includes/head.jade
   body
     h1= message
     h2= error.status
