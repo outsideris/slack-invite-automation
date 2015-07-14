@@ -4,7 +4,7 @@
 
 body,
 html {
-  background-color: #E6E6E6;
+  background-color: #e6e6e6;
   margin: 0;
   padding: 0;
 }
@@ -40,6 +40,7 @@ a {
 
 .title > span {
   color: #00749a;
+  text-transform: uppercase;
 }
 
 .img-logo{
