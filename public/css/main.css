@@ -4,7 +4,7 @@
 
 body,
 html {
-  background-color: #fff;
+  background-color: #E6E6E6;
   margin: 0;
   padding: 0;
 }
@@ -24,8 +24,12 @@ a {
 
 .content {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 3rem  auto;
   padding: 1rem;
+  background-color: #fff;
+  -moz-box-shadow: 0px 2px 6px rgba(100, 100, 100, 0.3);
+  -webkit-box-shadow: 0px 2px 6px rgba(100, 100, 100, 0.3);
+  box-shadow: 0px 2px 6px rgba(100, 100, 100, 0.3);
 }
 
 .title {
@@ -37,6 +41,17 @@ a {
 .title > span {
   color: #00749a;
 }
+
+.img-logo{
+  max-width: 100%;
+}
+
+.text-default{
+  font-size: 1em;
+  display: block;
+  padding: 0;
+  margin: 0;
+} 
 
 .text {
   font-size: 1em;
