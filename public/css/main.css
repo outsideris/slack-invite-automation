@@ -18,6 +18,10 @@ textarea {
   font-family: "Open Sans", "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+a {
+  color: #00749a;
+}
+
 .content {
   max-width: 600px;
   margin: 0 auto;
@@ -30,21 +34,21 @@ textarea {
   text-align: center;
 }
 
-.title > span{
-  color: #00749A;
+.title > span {
+  color: #00749a;
 }
 
-.text{
-  font-size: 1.1rem;
+.text {
+  font-size: 1em;
   display: block;
-  padding: .5rem;
+  padding: 1em;
   background-color: #fcf8e3;
   color: #8A6D3B;
   border: 1px solid #faebcc;
   text-align: center;
 }
 
-.message{
+.message {
   font-size: 1rem;
 }
 
@@ -56,7 +60,7 @@ textarea {
   color: #a94442;
 }
 
-#join-form{
+#join-form {
   display: block;
   margin-top: 1rem;
 }
