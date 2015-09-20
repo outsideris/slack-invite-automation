@@ -40,4 +40,4 @@ $ bin/www
 
 You can access <http://localhost:3000> on your web browser.
 
-![](https://raw.github.com/outsideris/slack-invite-automation/master/screenshots/join-page.png)
+![](https://raw.github.com/outsideris/slack-invite-automation/master/screenshots/join-page.jpg)
