@@ -1,20 +1,23 @@
 doctype html
 html
   head
+    meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
     title Join the #{community} community on Slack!
-    style.
-      body {
-        padding: 50px;
-        font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-      }
-      input {
-        font-size: 24px;
-        width: 400px;
-      }
+    link(href="css/style.css", rel="stylesheet", type="text/css")
+    link(href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,700italic|Open+Sans:700italic,400,600,300,700,800", rel="stylesheet", type="text/css")
   body
-    h1 Join the #{community} community on Slack!
-    form(method="POST", action="/invite")#join-form
-      input(type="text", name="email", placeholder="Enter your email")#slack-email
+    #wrapper
+      .main
+        .header
+          h1
+            strong #{community}
+          h2 Enter you email in below to join #{community} on slack!
+        .content
+          .information
+            form(method="POST", action="/invite")#join-form.form
+              input(type="text", name="email", placeholder="Enter Your Email Address")#slack-email.field
+              input(type="submit", value="Join").submit
     script.
       var form = document.getElementById('join-form');
       var email = document.getElementById('slack-email')

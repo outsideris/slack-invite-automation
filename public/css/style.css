@@ -1,0 +1,139 @@
+/* Reset */
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,dfn,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+
+
+
+html,body{
+margin:0;
+padding:0;
+font-family: 'Lato', sans-serif;
+background: #fff url(../images/bg.jpg) center top no-repeat;
+}
+
+
+#wrapper{
+max-width: 100%;
+width: 940px;
+margin: 0 auto;
+}
+
+.main{
+max-width: 100%;
+width: 940px;
+float: left;
+}
+
+.header, .content, .bottom, .sep2{
+width: 100%;
+float: left;
+}
+
+
+
+.header{
+	margin-top: 160px;
+	margin-bottom: 40px;
+}
+
+
+h1{
+font-family: 'Open Sans', sans-serif;
+color: #fff;
+text-align: center;
+font-size: 50px;
+font-weight: 300;
+margin: 0 0 10px 0;
+}
+
+
+h1 strong{
+font-size: 38px;
+font-weight: 700;
+}
+
+h2{
+	text-align: center;
+	font-weight: 300;
+	font-size: 20px;
+		color: #ffffff;
+
+}
+
+h2 strong{
+	font-weight: 700;
+	font-style: italic;
+}
+
+
+.information{
+width: 480px;
+padding-top: 35px;
+margin: 0 auto;
+}
+
+h3{
+font-size: 28px;
+font-weight: 600;
+color: #ffffff;
+}
+
+.information p{
+font-size: 16px;
+color: #ffffff;
+display: block;
+}
+
+.form{
+	float: left;
+	width: 478px;
+	margin-top: 20px;
+}
+
+.field{
+background: url(../images/field.png) repeat;
+width: 448px;
+-webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;
+border: none;
+font-style: italic;
+font-family: 'Lato', sans-serif;
+font-size: 16px;
+color: #ffffff;
+float: left;
+padding: 15px ;
+}
+
+@media only screen and (max-device-width: 420px)  {
+	.information{
+		width: 100%;
+	}
+	.form{
+		width: 100%;
+	}
+
+	.field {
+		width: 90%;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}
+
+.submit{
+padding: 3px 10px;
+-webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;
+margin-left: -78px;
+margin-top: 12px;
+background: #ffffff;
+border: none;
+float: left;
+font-family: 'Lato', sans-serif;
+font-size: 14px;
+font-weight: bold;
+cursor: pointer;
+}
+
+
+.submit:hover{
+background: #eeeeee;
+}
+
