@@ -24,9 +24,22 @@ router.post('/invite', function(req, res) {
         if (err) { return res.send('Error:' + err); }
         body = JSON.parse(body);
         if (body.ok) {
-          res.send('Success! Check "'+ req.body.email +'" for an invite from Slack.');
+          res.render('result', {
+            community: config.community,
+            message: 'Success! Check "'+ req.body.email +'" for an invite from Slack.'
+          });
         } else {
-          res.send('Failed! ' + body.error)
+          var error = body.error;
+          if (error === 'already_invited') {
+            error = 'You are already invited.'
+          } else if (error === 'invalid_email') {
+            error = 'The email you entered is an invalid email.'
+          }
+
+          res.render('result', {
+            community: config.community,
+            message: 'Failed! ' + error
+          });
         }
       });
   } else {
