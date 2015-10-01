@@ -4,11 +4,12 @@ var request = require('request');
 var config = require('../config');
 
 router.get('/', function(req, res) {
-  res.render('index', { community: config.community });
+  res.render('index', { community: config.community,
+                        tokenRequired: config.inviteToken !== "" });
 });
 
 router.post('/invite', function(req, res) {
-  if (req.body.email) {
+  if (req.body.email && req.body.token && config.inviteToken !== "" && req.body.token === config.inviteToken) {
     request.post({
         url: 'https://'+ config.slackUrl + '/api/users.admin.invite',
         form: {
@@ -43,7 +44,25 @@ router.post('/invite', function(req, res) {
         }
       });
   } else {
-    res.status(400).send('email is required.');
+    var errMsg = [];
+    if (!req.body.email) {
+      errMsg.push('email is required.');
+    }
+
+    if (config.inviteToken !== "") {
+      if (!req.body.token) {
+        errMsg.push('token is required.');
+      }
+
+      if (req.body.token && req.body.token !== config.inviteToken) {
+        errMsg.push('token is wrong.');
+      }
+    }
+
+    res.render('result', {
+      community: config.community,
+      message: errMsg.join(" and ")
+    });
   }
 });
 

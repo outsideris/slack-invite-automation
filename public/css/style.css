@@ -100,7 +100,8 @@ font-family: 'Lato', sans-serif;
 font-size: 16px;
 color: #ffffff;
 float: left;
-padding: 15px ;
+padding: 15px;
+margin-bottom: 15px;
 }
 
 @media only screen and (max-device-width: 420px)  {
