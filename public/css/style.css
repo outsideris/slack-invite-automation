@@ -143,3 +143,13 @@ background: #eeeeee;
   font-weight: 700;
   font-size: 25px;
 }
+
+a {
+  color: #92BCF2;
+  font-weight: 700;
+}
+
+a:visited,
+a:hover {
+  color: #7EB6FF;
+}
