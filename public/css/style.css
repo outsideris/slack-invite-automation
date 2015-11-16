@@ -138,3 +138,8 @@ cursor: pointer;
 background: #eeeeee;
 }
 
+.error {
+  color: #FE7070;
+  font-weight: 700;
+  font-size: 25px;
+}

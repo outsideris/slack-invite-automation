@@ -31,37 +31,41 @@ router.post('/invite', function(req, res) {
           });
         } else {
           var error = body.error;
-          if (error === 'already_invited') {
+          if (error === 'already_invited' || error === 'already_in_team') {
             error = 'You are already invited.'
           } else if (error === 'invalid_email') {
             error = 'The email you entered is an invalid email.'
+          } else if (error === 'invalid_auth') {
+            error = 'Something has gone wrong. Please contact a system administrator.'
           }
 
           res.render('result', {
             community: config.community,
-            message: 'Failed! ' + error
+            message: 'Failed! ' + error,
+            isFailed: true
           });
         }
       });
   } else {
     var errMsg = [];
     if (!req.body.email) {
-      errMsg.push('email is required');
+      errMsg.push('your email is required');
     }
 
     if (!!config.inviteToken) {
       if (!req.body.token) {
-        errMsg.push('token is required');
+        errMsg.push('valid token is required');
       }
 
       if (req.body.token && req.body.token !== config.inviteToken) {
-        errMsg.push('token is wrong');
+        errMsg.push('the token you entered is wrong');
       }
     }
 
     res.render('result', {
       community: config.community,
-      message: 'Failed! ' + errMsg.join(' and ') + '.'
+      message: 'Failed! ' + errMsg.join(' and ') + '.',
+      isFailed: true
     });
   }
 });
