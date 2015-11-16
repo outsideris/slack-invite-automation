@@ -5,11 +5,11 @@ var config = require('../config');
 
 router.get('/', function(req, res) {
   res.render('index', { community: config.community,
-                        tokenRequired: config.inviteToken !== "" });
+                        tokenRequired: !!config.inviteToken });
 });
 
 router.post('/invite', function(req, res) {
-  if (req.body.email && req.body.token && config.inviteToken !== "" && req.body.token === config.inviteToken) {
+  if (req.body.email && (!config.inviteToken || (!!config.inviteToken && req.body.token === config.inviteToken))) {
     request.post({
         url: 'https://'+ config.slackUrl + '/api/users.admin.invite',
         form: {
@@ -46,22 +46,22 @@ router.post('/invite', function(req, res) {
   } else {
     var errMsg = [];
     if (!req.body.email) {
-      errMsg.push('email is required.');
+      errMsg.push('email is required');
     }
 
-    if (config.inviteToken !== "") {
+    if (!!config.inviteToken) {
       if (!req.body.token) {
-        errMsg.push('token is required.');
+        errMsg.push('token is required');
       }
 
       if (req.body.token && req.body.token !== config.inviteToken) {
-        errMsg.push('token is wrong.');
+        errMsg.push('token is wrong');
       }
     }
 
     res.render('result', {
       community: config.community,
-      message: errMsg.join(" and ")
+      message: 'Failed! ' + errMsg.join(' and ') + '.'
     });
   }
 });

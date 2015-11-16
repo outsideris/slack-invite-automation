@@ -13,6 +13,6 @@ module.exports = {
   //   --data 'email=EMAIL&token=TOKEN&set_active=true' \
   //   --compressed
   slacktoken: process.env.SLACK_TOKEN || 'YOUR-ACCESS-TOKEN',
-
-  inviteToken: process.env.INVITE_TOKEN || ''
+  // an optional security measure - if it is set, then that token will be required to get invited.
+  inviteToken: process.env.INVITE_TOKEN || null
 };
