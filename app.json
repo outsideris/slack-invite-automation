@@ -17,8 +17,9 @@
       "value": ""
     },
     "INVITE_TOKEN": {
-      "description": "Shared secret token used to get access. Leave blank if you don't want users to have to provide a token.",
-      "value": ""
+      "description": "Shared invite token used to get access. Leave blank if you don't want users to have to provide a token.",
+      "value": "",
+      "required": false
     }
   }
 }
