@@ -17,12 +17,15 @@ html
           .information
             form(method="POST", action="/invite")#join-form.form
               input(type="text", name="email", placeholder="Enter Your Email Address")#slack-email.field
+              if tokenRequired
+                input(type="text", name="token", placeholder="Enter the token you were given")#slack-token.field
               input(type="submit", value="Join").submit
     script.
       var form = document.getElementById('join-form');
-      var email = document.getElementById('slack-email')
+      var email = document.getElementById('slack-email');
+      var token = document.getElementById('slack-token');
       form.addEventListener('submit', function(evt) {
-        if (!email.value) {
+        if (!email.value || (tokenRequired && !token.value)) {
           evt.preventDefault();
         }
       });
