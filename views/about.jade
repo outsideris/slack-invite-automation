@@ -21,17 +21,9 @@ html
           h2 Enter your email below to join #{community} on slack!
         .content
           .information
-            form(method="POST", action="/invite")#join-form.form
-              input(type="text", name="email", placeholder="Enter Your Email Address")#slack-email.field
-              if tokenRequired
-                input(type="text", name="token", placeholder="Enter the invite token you were given")#slack-token.field
-              input(type="submit", value="Join").submit
+            p Placeholder text for about section.
     script.
       var tokenRequired = #{tokenRequired};
-      var form = document.getElementById('join-form');
-      var email = document.getElementById('slack-email');
-      var token = document.getElementById('slack-token');
-      form.addEventListener('submit', function(evt) {
         if (!email.value) {
           evt.preventDefault();
         }
