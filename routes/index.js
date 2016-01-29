@@ -3,6 +3,7 @@ var router = express.Router();
 var request = require('request');
 var config = require('../config');
 var YAML = require('yamljs');
+var rules = YAML.load('./data/rules.yaml');
 
 router.get('/', function(req, res) {
   res.render('index', { community: config.community,
@@ -14,7 +15,7 @@ router.get('/about', function(req, res) {
 });
 
 router.get('/rules', function(req, res) {
-  res.render('rules', {});
+  res.render('rules', { ruleData: rules });
 });
 
 router.post('/invite', function(req, res) {
