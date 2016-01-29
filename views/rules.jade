@@ -1,32 +1,17 @@
-doctype html
-html
-  head
-    meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
-    title Join the #{community} community on Slack!
-    link(href="css/style.css", rel="stylesheet", type="text/css")
-    link(href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,700italic|Open+Sans:700italic,400,600,300,700,800", rel="stylesheet", type="text/css")
-  body
-    #wrapper
-      nav
-        ul
-          li
-            a(href="/") Join
-          li
-            a(href="/about") About
-          li
-            a(href="/rules") Rules
-      .main
-        .header
-          h2 Rules
-        .content
-          .information
-    script.
-      var tokenRequired = #{tokenRequired};
-        if (!email.value) {
-          evt.preventDefault();
-        }
-        if (tokenRequired && !token.value) {
-          evt.preventDefault();
-        }
-      });
+extends ./layout.jade
+
+block content
+  .header
+    h2 Rules
+  .content
+    .information
+
+script.
+  var tokenRequired = #{tokenRequired};
+    if (!email.value) {
+      evt.preventDefault();
+    }
+    if (tokenRequired && !token.value) {
+      evt.preventDefault();
+    }
+  });
