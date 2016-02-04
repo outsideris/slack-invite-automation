@@ -1,23 +1,24 @@
 {
   "name": "Slack Invite Automation",
   "description": "A tiny web application to invite a user info your slack team.",
-  "repository": "https://github.com/outsideris/slack-invite-automation",
+  "repository": "https://github.com/casamarco/Botkit",
   "keywords": ["node", "slack", "invite"],
   "env": {
     "COMMUNITY_NAME": {
       "description": "Your team name",
-      "value": "YOUR TEAM NAME"
+      "value": "CMMananement"
     },
     "SLACK_URL": {
       "description": "Your slack url(ex: socketio.slack.com)",
-      "value": "YOUR-TEAM.slack.com"
+      "value": "cmmanagement.slack.com"
     },
-    "SLACK_TOKEN": {
-      "description": "access token of slack, You can generate it in https://api.slack.com/web#auth",
+    "SLACK_EN": {xoxp-2660321107-2660321109-2802360955-0f2736
+
+      "description": "access en of slack, You can generate it in https://api.slack.com/web#auth",
       "value": ""
     },
-    "INVITE_TOKEN": {
-      "description": "Shared invite token used to get access. Leave blank if you don't want users to have to provide a token.",
+    "INVITE_EN": {
+      "description": "Shared invite en used to get access. Leave blank if you don't want users to have to provide a en.",
       "value": "",
       "required": false
     }
