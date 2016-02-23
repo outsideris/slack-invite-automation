@@ -12,11 +12,12 @@ var routes = require('./routes/index');
 var app = express();
 
 i18n.configure({
-    locale: config.locale,
     defaultLocale: "en",
     directory: __dirname + '/locales',
     autoReload: true
 });
+
+i18n.setLocale(config.locale);
 
 // default: using 'accept-language' header to guess language settings
 app.use(i18n.init);
