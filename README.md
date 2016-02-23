@@ -20,7 +20,7 @@ fill out `config.js` as your infomation.
   **You should generate the token in admin user, not owner.**
   If you generate the token in owner user, `missing_scope` error will be occurred.
 * `inviteToken`: an optional security measure - if it is set, then that token will be required to get invited.
-  Intended to be provided in person or on a whiteboard or something.
+* `locale`: application language (currently `en` and `fr` available).
 
   You can test your token via curl:
 
