@@ -1,13 +1,25 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+var express = require('express'),
+    path = require('path'),
+    favicon = require('serve-favicon'),
+    logger = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
+    config = require('./config');
+    i18n = require("i18n");
 
 var routes = require('./routes/index');
 
 var app = express();
+
+i18n.configure({
+    locale: config.locale,
+    defaultLocale: "en",
+    directory: __dirname + '/locales',
+    autoReload: true
+});
+
+// default: using 'accept-language' header to guess language settings
+app.use(i18n.init);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
