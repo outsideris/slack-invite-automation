@@ -3,7 +3,7 @@ html
   head
     meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    title Join the #{community} community on Slack!
+    title #{__('TITLE', community)}
     link(href="css/style.css", rel="stylesheet", type="text/css")
     link(href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,700italic|Open+Sans:700italic,400,600,300,700,800", rel="stylesheet", type="text/css")
   body
@@ -12,13 +12,13 @@ html
         .header
           h1
             strong #{community}
-          h2 Enter your email below to join #{community} on slack!
+          h2 #{__('HEADER', community)}
         .content
           .information
             form(method="POST", action="/invite")#join-form.form
-              input(type="text", name="email", placeholder="Enter Your Email Address")#slack-email.field
+              input(type="text", name="email", placeholder="#{__('ENTER_EMAIL')}")#slack-email.field
               if tokenRequired
-                input(type="text", name="token", placeholder="Enter the invite token you were given")#slack-token.field
+                input(type="text", name="token", placeholder="#{__('ENTER_TOKEN')}")#slack-token.field
               input(type="submit", value="Join").submit
     script.
       var tokenRequired = #{tokenRequired};
