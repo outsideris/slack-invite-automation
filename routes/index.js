@@ -14,8 +14,12 @@ router.get('/about', function(req, res) {
   res.render('about', {});
 });
 
-router.get('/rules', function(req, res) {
-  res.render('rules', { ruleData: rules });
+router.get('/code_of_conduct', function(req, res) {
+  res.render('code_of_conduct', {});
+});
+
+router.get('/etiquette', function(req, res) {
+  res.render('etiquette', {});
 });
 
 router.post('/invite', function(req, res) {
