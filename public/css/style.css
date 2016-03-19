@@ -42,7 +42,7 @@ float: left;
 
 h1{
 font-family: 'Open Sans', sans-serif;
-color: #fff;
+color: #000;
 text-align: center;
 font-size: 50px;
 font-weight: 300;
@@ -59,7 +59,7 @@ h2{
 	text-align: center;
 	font-weight: 300;
 	font-size: 20px;
-		color: #ffffff;
+		color: #000;
 
 }
 
@@ -78,12 +78,12 @@ margin: 0 auto;
 h3{
 font-size: 28px;
 font-weight: 600;
-color: #ffffff;
+color: #000;
 }
 
 .information p{
 font-size: 16px;
-color: #ffffff;
+color: #000;
 display: block;
 }
 
@@ -101,7 +101,7 @@ border: none;
 font-style: italic;
 font-family: 'Lato', sans-serif;
 font-size: 16px;
-color: #ffffff;
+color: #000;
 float: left;
 padding: 15px;
 margin-bottom: 15px;
@@ -127,7 +127,7 @@ padding: 3px 10px;
 -webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;
 margin-left: -78px;
 margin-top: 12px;
-background: #ffffff;
+background: #000;
 border: none;
 float: left;
 font-family: 'Lato', sans-serif;
