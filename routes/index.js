@@ -39,8 +39,7 @@ router.post('/invite', function(req, res) {
             });
             return;
           } else if (error === 'invalid_email') {
-            //error = 'The email you entered is an invalid email.'
-            error = #{'ERROR_ENVI'};
+            error = 'The email you entered is an invalid email.'
           } else if (error === 'invalid_auth') {
             error = 'Something has gone wrong. Please contact a system administrator.'
           }
