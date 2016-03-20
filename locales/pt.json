@@ -1,0 +1,10 @@
+{
+	"HEADER": "Digite seu e-mail abaixo para se juntar ao %s no Slack!",
+	"ENTER_EMAIL": "Insira seu endereço de e-mail",
+	"ENTER_TOKEN": "Digite seu Token de convite que foi dado a você",
+	"TITLE": "Junte-se a comunida %s no Slack!",
+	"ERROR_ENVI": "Failed teste! The email you entered is an invalid email."
+}
+
+
+/*Failed teste! The email you entered is an invalid email. */
