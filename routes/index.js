@@ -8,10 +8,6 @@ router.get('/', function(req, res) {
                         tokenRequired: !!config.inviteToken });
 });
 
-router.get('/about', function(req, res) {
-  res.render('about', {});
-});
-
 router.post('/invite', function(req, res) {
   if (req.body.email && (!config.inviteToken || (!!config.inviteToken && req.body.token === config.inviteToken))) {
     request.post({

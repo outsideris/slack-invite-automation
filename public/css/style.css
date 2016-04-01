@@ -104,7 +104,6 @@ padding: 15px;
 margin-bottom: 15px;
 }
 
-
 @media only screen and (max-device-width: 420px)  {
 	.information{
 		width: 100%;
@@ -145,23 +144,12 @@ background: #eeeeee;
   font-size: 25px;
 }
 
-nav {
-padding: 15px;
-}
-
-nav ul li {
-  float: right;
-  padding-right: 15px;
-}
-
 a {
   color: #92BCF2;
   font-weight: 700;
-  text-decoration: none;
 }
 
 a:visited,
 a:hover {
   color: #7EB6FF;
-  text-decoration: none;
 }
