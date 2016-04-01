@@ -20,6 +20,10 @@ html
               if tokenRequired
                 input(type="text", name="token", placeholder="Enter the invite token you were given")#slack-token.field
               input(type="submit", value="Join").submit
+        br
+        h2
+          em By joining this Slack, you agree to abide by the group's
+            a(href="https://docs.google.com/document/d/1X3naYN24gQkBiRC-XnaebPN43fx7WIlIRXjZOjhzX4c/edit?usp=sharing" target="_blank")   Code of Conduct
     script.
       var tokenRequired = #{tokenRequired};
       var form = document.getElementById('join-form');
