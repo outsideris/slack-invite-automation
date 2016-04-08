@@ -27,26 +27,26 @@ router.post('/invite', function(req, res) {
         if (body.ok) {
           res.render('result', {
             community: config.community,
-            message: 'Success! Check "'+ req.body.email +'" for an invite from Slack.'
+            message: 'Éxito! Mira "'+ req.body.email +'" para aceptar la invitación.'
           });
         } else {
           var error = body.error;
           if (error === 'already_invited' || error === 'already_in_team') {
             res.render('result', {
               community: config.community,
-              message: 'Success! You were already invited.<br>' +
-                       'Visit <a href="https://'+ config.slackUrl +'">'+ config.community +'</a>'
+              message: 'Éxito! Ya has sido invitado.<br>' +
+                       'Visita <a href="https://'+ config.slackUrl +'">'+ config.community +'</a>'
             });
             return;
           } else if (error === 'invalid_email') {
-            error = 'The email you entered is an invalid email.'
+            error = 'El email ingresado no es válido.'
           } else if (error === 'invalid_auth') {
-            error = 'Something has gone wrong. Please contact a system administrator.'
+            error = 'Algo salió mal. Por favor contacta al administrador en info@cppcolombia.tech'
           }
 
           res.render('result', {
             community: config.community,
-            message: 'Failed! ' + error,
+            message: 'Falló! ' + error,
             isFailed: true
           });
         }
@@ -54,22 +54,22 @@ router.post('/invite', function(req, res) {
   } else {
     var errMsg = [];
     if (!req.body.email) {
-      errMsg.push('your email is required');
+      errMsg.push('El email es obligatorio');
     }
 
     if (!!config.inviteToken) {
       if (!req.body.token) {
-        errMsg.push('valid token is required');
+        errMsg.push('El token es obligatorio');
       }
 
       if (req.body.token && req.body.token !== config.inviteToken) {
-        errMsg.push('the token you entered is wrong');
+        errMsg.push('El token ingresado no es correcto');
       }
     }
 
     res.render('result', {
       community: config.community,
-      message: 'Failed! ' + errMsg.join(' and ') + '.',
+      message: 'Falló! ' + errMsg.join(' and ') + '.',
       isFailed: true
     });
   }
