@@ -11,21 +11,20 @@ var routes = require('./routes/index');
 
 var app = express();
 
-i18n.configure({
-	locales:['es', 'fr', 'pt'],
-	defaultLocale: "en",
-	queryParameter: 'lang', //query parameter to switch locale (ie. /home?lang=ch) - defaults to NULL
-	directory: __dirname + '/locales',
-	autoReload: true
-});
-
-i18n.setLocale(config.locale);
-
 app.configure(function() {
+
+	i18n.configure({
+		locales:['es', 'fr', 'pt'],
+		defaultLocale: "en",
+		queryParameter: 'lang', //query parameter to switch locale (ie. /home?lang=ch) - defaults to NULL
+		directory: __dirname + '/locales',
+		autoReload: true
+	});
+
+	i18n.setLocale(config.locale);
 
 	// default: using 'accept-language' header to guess language settings
 	app.use(i18n.init);
-
 });
 
 // view engine setup
