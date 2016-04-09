@@ -27,6 +27,7 @@ html
       var token = document.getElementById('slack-token');
       form.addEventListener('submit', function(evt) {
         if (!email.value) {
+		alert(__('EMAIL_REQUIRED'));
           evt.preventDefault();
         }
         if (tokenRequired && !token.value) {
