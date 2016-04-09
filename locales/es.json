@@ -3,5 +3,7 @@
 	"ENTER_EMAIL": "Ingresa tu E-mail",
 	"ENTER_TOKEN": "Ingresa el token de invitación que te han enviado",
 	"TITLE": "Únete al grupo de usuarios %s en Slack!",
-        "BUTTONVALUE": "¡Únete!"
+        "BUTTONVALUE": "¡Únete!",
+        "INVITATION_SUCCESS": "Great! check %s to accept your invitation",
+        "INVITATION_ALREADY": "Your invitation was already proccessed.<br>Visita <a href='https://%s'>%s</a>"
 }

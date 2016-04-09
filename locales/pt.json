@@ -2,5 +2,7 @@
         "ENTER_EMAIL": "Insira seu endereço de e-mail",
         "ENTER_TOKEN": "Digite seu Token de convite que foi dado a você",
         "TITLE": "Junte-se ao grupo de usuários %s no Slack!",
-        "BUTTONVALUE": "Juntar-se"
+        "BUTTONVALUE": "Juntar-se",
+        "INVITATION_SUCCESS": "Great! check %s to accept your invitation",
+        "INVITATION_ALREADY": "Your invitation was already proccessed.<br>Visita <a href='https://%s'>%s</a>"
 }

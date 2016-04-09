@@ -5,5 +5,5 @@
 	"TITLE": "Join the %s user group on Slack!",
         "BUTTONVALUE": "Join",
         "INVITATION_SUCCESS": "Great! check %s to accept your invitation",
-        "INVITATION_ALREADY": "Your invitation was already proccessed.<br>Visita <a href='https://%s'>%s</a>",
+        "INVITATION_ALREADY": "Your invitation was already proccessed.<br>Visita <a href='https://%s'>%s</a>"
 }

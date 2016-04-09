@@ -27,14 +27,14 @@ router.post('/invite', function(req, res) {
         if (body.ok) {
           res.render('result', {
             community: config.community,
-            message: ''//req.__('INVITATION_SUCCESS', req.body.email)
+            message: req.__('INVITATION_SUCCESS', req.body.email)
           });
         } else {
           var error = body.error;
           if (error === 'already_invited' || error === 'already_in_team') {
             res.render('result', {
               community: config.community,
-              message: ''//req.__('INVITATION_ALREADY', config.slackUrl, config.community)
+              message: req.__('INVITATION_ALREADY', config.slackUrl, config.community)
             });
             return;
           } else if (error === 'invalid_email') {
