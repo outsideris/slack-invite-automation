@@ -22,8 +22,12 @@ router.post('/invite', function(req, res) {
         //   {"ok":true}
         //       or
         //   {"ok":false,"error":"already_invited"}
-        if (err) { return res.send('Error:' + err); }
+        if (err) { 
+		return res.send('Error:' + err); 
+	}
+
         body = JSON.parse(body);
+
         if (body.ok) {
           res.render('result', {
             community: config.community,
@@ -52,6 +56,9 @@ router.post('/invite', function(req, res) {
         }
       });
   } else {
+
+	console.log("no email found 1");
+
     var errMsg = [];
 
     if (!req.body.email) {
@@ -67,12 +74,15 @@ router.post('/invite', function(req, res) {
         errMsg.push(req.__('TOKEN_INVALID'));
       }
     }
+	console.log("no email found 2");
 
     res.render('result', {
       community: config.community,
       isFailed: true,
       message: req.__('FORM_INVALID_ERROR', errMsg.join('</br>'))      
     });
+
+		console.log("no email found 3");
   }
 });
 
