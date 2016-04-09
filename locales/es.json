@@ -11,7 +11,7 @@
 	"EMAIL_REQUIRED": "El email es obligatorio",
 	"TOKEN_REQUIRED": "EL token es obligatorio",
 	"TOKEN_INVALID": "El token no es valido",
-	"FORM_POST_ERROR": "Algo fallo enviando tu solicitud. Mensaje: %s",
-	"FORM_INVALID_ERROR": "Uno o mas campos no son validos. Mensaje: %s",
+	"FORM_POST_ERROR": "Algo fallo enviando tu solicitud.</br>Mensaje: %s",
+	"FORM_INVALID_ERROR": "Uno o mas campos no son validos.</br>Mensaje: %s",
 	"HTTP_RESPONSE_404": "La pagina solicitada no existe"
 }

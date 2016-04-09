@@ -57,32 +57,33 @@ router.post('/invite', function(req, res) {
       });
   } else {
 
-	console.log("no email found 1");
+	alert('no email found 1');
 
-    var errMsg = [];
+	var errMsg = [];
 
-    if (!req.body.email) {
-      errMsg.push(req.__('EMAIL_REQUIRED'));
-    }
+	if (!req.body.email) {
+		errMsg.push(req.__('EMAIL_REQUIRED'));
+	}
 
-    if (!!config.inviteToken) {
-      if (!req.body.token) {
-        errMsg.push(req.__('TOKEN_REQUIRED'));
-      }
+	if (!!config.inviteToken) {
+		if (!req.body.token) {
+			errMsg.push(req.__('TOKEN_REQUIRED'));
+		}
 
-      if (req.body.token && req.body.token !== config.inviteToken) {
-        errMsg.push(req.__('TOKEN_INVALID'));
-      }
-    }
-	console.log("no email found 2");
+		if (req.body.token && req.body.token !== config.inviteToken) {
+			errMsg.push(req.__('TOKEN_INVALID'));
+		}
+	}
 
-    res.render('result', {
-      community: config.community,
-      isFailed: true,
-      message: req.__('FORM_INVALID_ERROR', errMsg.join('</br>'))      
-    });
+	alert('no email found 2');
 
-		console.log("no email found 3");
+	res.render('result', {
+		community: config.community,
+		isFailed: true,
+		message: req.__('FORM_INVALID_ERROR', errMsg.join('</br>'))      
+	});
+
+	alert('no email found 3');
   }
 });
 
