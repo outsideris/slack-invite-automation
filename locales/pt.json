@@ -3,6 +3,13 @@
         "ENTER_TOKEN": "Digite seu Token de convite que foi dado a você",
         "TITLE": "Junte-se ao grupo de usuários %s no Slack!",
         "BUTTONVALUE": "Juntar-se",
-        "INVITATION_SUCCESS": "Great! check %s to accept your invitation",
-        "INVITATION_ALREADY": "Your invitation was already proccessed.<br>Visita <a href='https://%s'>%s</a>"
+        "INVITATION_SUCCESS": "Ótimo! verifique %s para aceitar o seu convite",
+        "INVITATION_ALREADY": "Seu convite já foi processado.<br>Verifique <a href='https://%s'>%s</a>",
+	"INVALID_EMAIL": "The email is not valid",
+	"INVALID_AUTH": "Something went really bad, please send an email to %s and your invitation will be processed :)",	
+	"EMAIL_REQUIRED": "The email is required",
+	"TOKEN_REQUIRED": "The token is required",
+	"TOKEN_INVALID": "The token is not valid",
+	"FORM_POST_ERROR": "Something failed sending your request. Message: %s",
+	"FORM_INVALID_ERROR": "One or more fields are not valid. Message: %s"
 }

@@ -38,38 +38,38 @@ router.post('/invite', function(req, res) {
             });
             return;
           } else if (error === 'invalid_email') {
-            error = 'El email ingresado no es válido.'
+            error = req.__('INVALID_EMAIL')
           } else if (error === 'invalid_auth') {
-            error = 'Algo salió mal. Por favor contacta al administrador en info@cppcolombia.tech'
+            error = req.__('INVALID_AUTH', config.supportEmail)
           }
 
           res.render('result', {
             community: config.community,
-            message: 'Falló! ' + error,
-            isFailed: true
+	    isFailed: true,
+            message: req.__('FORM_POST_ERROR', error)            
           });
         }
       });
   } else {
     var errMsg = [];
     if (!req.body.email) {
-      errMsg.push('El email es obligatorio');
+      errMsg.push(req.__('EMAIL_REQUIRED'));
     }
 
     if (!!config.inviteToken) {
       if (!req.body.token) {
-        errMsg.push('El token es obligatorio');
+        errMsg.push(req.__('TOKEN_REQUIRED'));
       }
 
       if (req.body.token && req.body.token !== config.inviteToken) {
-        errMsg.push('El token ingresado no es correcto');
+        errMsg.push(req.__('TOKEN_INVALID'));
       }
     }
 
     res.render('result', {
       community: config.community,
-      message: 'Falló! ' + errMsg.join(' and ') + '.',
-      isFailed: true
+      isFailed: true,
+      message: req.__('FORM_INVALID_ERROR', errMsg.join('</br>'))      
     });
   }
 });
