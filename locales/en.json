@@ -3,5 +3,6 @@
 	"ENTER_EMAIL": "Enter Your Email Address",
 	"ENTER_TOKEN": "Enter the invite token you were given",
 	"TITLE": "Join the %s user group on Slack!",
-        "BUTTONVALUE": "Join"
+        "BUTTONVALUE": "Join",
+        "INVITATION_SUCCESS": "Great! check %s to accept your invitation"
 }

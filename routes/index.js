@@ -27,7 +27,7 @@ router.post('/invite', function(req, res) {
         if (body.ok) {
           res.render('result', {
             community: config.community,
-            message: 'Éxito! Mira "'+ req.body.email +'" para aceptar la invitación.'
+            message: res.__('INVITATION_SUCCESS', req.body.email);
           });
         } else {
           var error = body.error;
