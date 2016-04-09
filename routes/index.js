@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var config = require('../config');
+var i18n = require("i18n");
 
 router.get('/', function(req, res) {
   res.render('index', { community: config.community,
