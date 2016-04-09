@@ -11,5 +11,6 @@
 	"TOKEN_REQUIRED": "The token is required",
 	"TOKEN_INVALID": "The token is not valid",
 	"FORM_POST_ERROR": "Something failed sending your request. Message: %s",
-	"FORM_INVALID_ERROR": "One or more fields are not valid. Message: %s"
+	"FORM_INVALID_ERROR": "One or more fields are not valid. Message: %s",
+	"HTTP_RESPONSE_404": "The requested page was not found"
 }

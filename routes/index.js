@@ -31,6 +31,7 @@ router.post('/invite', function(req, res) {
           });
         } else {
           var error = body.error;
+
           if (error === 'already_invited' || error === 'already_in_team') {
             res.render('result', {
               community: config.community,
@@ -52,6 +53,7 @@ router.post('/invite', function(req, res) {
       });
   } else {
     var errMsg = [];
+
     if (!req.body.email) {
       errMsg.push(req.__('EMAIL_REQUIRED'));
     }
