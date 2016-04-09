@@ -1,4 +1,6 @@
-  #Translate pt-BR (Portugues Brazil)
-    "ENTER_EMAIL": "Insira seu endereço de e-mail",
-  	"ENTER_TOKEN": "Digite seu Token de convite que foi dado a você",
-  	"TITLE": "Junte-se a comunida %s no Slack!",
+{
+        "ENTER_EMAIL": "Insira seu endereço de e-mail",
+        "ENTER_TOKEN": "Digite seu Token de convite que foi dado a você",
+        "TITLE": "Junte-se ao grupo de usuários %s no Slack!",
+        "BUTTONVALUE": "Juntar-se"
+}
