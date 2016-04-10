@@ -1,6 +1,17 @@
 {
-	"HEADER": "Enter your email below to join %s on Slack!",
-	"ENTER_EMAIL": "Enter Your Email Address",
-	"ENTER_TOKEN": "Enter the invite token you were given",
-	"TITLE": "Join the %s community on Slack!"
+  "HEADER": "Enter your email below to join %s user group on Slack!",
+  "ENTER_EMAIL": "Enter Your Email Address",
+  "ENTER_TOKEN": "Enter the invite token you were given",
+  "TITLE": "Join the %s user group on Slack!",
+  "BUTTONVALUE": "Join",
+  "INVITATION_SUCCESS": "Great! check %s to accept your invitation",
+  "INVITATION_ALREADY": "Your invitation was already proccessed.</br>Check <a href='https://%s'>%s</a>",
+  "INVALID_EMAIL": "The email is not valid",
+  "INVALID_AUTH": "Something went really bad, please send an email to %s and your invitation will be processed :)",
+  "EMAIL_REQUIRED": "The email is required",
+  "TOKEN_REQUIRED": "The token is required",
+  "TOKEN_INVALID": "The token is not valid",
+  "FORM_POST_ERROR": "Something failed sending your request.</br>Message: %s",
+  "FORM_INVALID_ERROR": "One or more fields are not valid.</br>Message: %s",
+  "HTTP_RESPONSE_404": "The requested page was not found"
 }

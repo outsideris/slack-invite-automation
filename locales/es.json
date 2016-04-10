@@ -1,0 +1,17 @@
+{
+  "HEADER": "Ingresa tu E-mail para unirte al grupo de usuarios %s en Slack",
+  "ENTER_EMAIL": "Ingresa tu E-mail",
+  "ENTER_TOKEN": "Ingresa el token de invitación que te han enviado",
+  "TITLE": "Únete al grupo de usuarios %s en Slack!",
+  "BUTTONVALUE": "¡Únete!",
+  "INVITATION_SUCCESS": "Muy bien! revisa %s para aceptar tu invitación",
+  "INVITATION_ALREADY": "Tu invitación ya ha sido procesada anteriormente.<br>Visita <a href='https://%s'>%s</a>",
+  "INVALID_EMAIL": "El email no es válido",
+  "INVALID_AUTH": "Algo muy malo sucedió, por favor envía un email a %s y tu invitación será procesada :)",
+  "EMAIL_REQUIRED": "El email es obligatorio",
+  "TOKEN_REQUIRED": "EL token es obligatorio",
+  "TOKEN_INVALID": "El token no es válido",
+  "FORM_POST_ERROR": "Algo falló enviando tu solicitud.</br>Mensaje: %s",
+  "FORM_INVALID_ERROR": "Uno o mas campos no son válidos.</br>Mensaje: %s",
+  "HTTP_RESPONSE_404": "La pagina solicitada no existe"
+}

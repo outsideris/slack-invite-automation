@@ -1,6 +1,17 @@
 {
-	"HEADER": "Entrez votre adresse mail pour rejoindre le groupe %s sur Slack!",
-	"ENTER_EMAIL": "Entez votre adresse mail",
-	"ENTER_TOKEN": "Entrez votre token d'invitation",
-	"TITLE": "Rejoignez le groupe %s sur Slack!"
+  "HEADER": "Entrez votre adresse mail pour rejoindre le groupe %s sur Slack!",
+  "ENTER_EMAIL": "Entez votre adresse mail",
+  "ENTER_TOKEN": "Entrez votre token d'invitation",
+  "TITLE": "Rejoignez le groupe %s sur Slack!",
+  "BUTTONVALUE": "Rejoindre",
+  "INVITATION_SUCCESS": "Génial! vérifiez %s pour accepter votre invitation",
+  "INVITATION_ALREADY": "Votre invitation a déjà été traitée.<br>Vérifiez <a href='https://%s'>%s</a>",
+  "INVALID_EMAIL": "L'e-mail est pas valide",
+  "INVALID_AUTH": "Quelque chose de vraiment mauvais qui s'est passé, s'il vous plaît envoyer un e-mail à %s et votre invitation sera traitée :)",
+  "EMAIL_REQUIRED": "L'e-mail est requis",
+  "TOKEN_REQUIRED": "Le jeton n'est pas valide",
+  "TOKEN_INVALID": "Le jeton n'est pas valide",
+  "FORM_POST_ERROR": "Something failed sending your request.</br>Message: %s",
+  "FORM_INVALID_ERROR": "One or more fields are not valid.</br>Message: %s",
+  "HTTP_RESPONSE_404": "The requested page was not found"
 }
