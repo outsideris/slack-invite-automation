@@ -2,7 +2,7 @@
   "name": "Slack Invite Automation",
   "description": "A tiny web application to invite a user into your slack team.",
   "repository": "https://github.com/outsideris/slack-invite-automation",
-  "keywords": ["node", "slack", "invite"],
+  "keywords": [ "node", "slack", "invite" ],
   "env": {
     "COMMUNITY_NAME": {
       "description": "Your team name",
@@ -20,6 +20,10 @@
       "description": "Shared invite token used to get access. Leave blank if you don't want users to have to provide a token.",
       "value": "",
       "required": false
+    },
+    "SUPPORT_EMAIL": {
+      "description": "Email used in case the application gets some error from slack API, the users will contact you to process their invitations.",
+      "value": ""
     }
   }
 }
