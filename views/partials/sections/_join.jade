@@ -1,0 +1,26 @@
+.Join-slack
+  .Join-form
+    form(action='?', method='POST')
+      fieldset
+        div.Join-email#enter-email
+          div.loader
+          input#email(type='email', required)
+          div.indicator(data-content="Email")
+        div#terms
+          div.Terms
+            .container
+              section
+                span please review and agree to the
+                .morph-button.morph-button-overlay.morph-button-fixed
+                  button(type='button') Code of Conduct
+                  .morph-content
+                    div
+                      .content-style-overlay
+                        span.fa.fa-close.icon.icon-close
+                        include ../_coc.jade
+
+        div#verify-human
+          div#recaptcha-overlay
+          div#recaptcha(class="g-recaptcha" data-callback="isHuman" data-sitekey="6LfMcxoTAAAAAJ4tBiXgOx3Z5bRpt0zL-Hp6Up7T")
+        div#joinButton
+          button(type='button') Click to Join!
