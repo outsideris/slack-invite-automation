@@ -4,6 +4,7 @@ var request = require('request');
 var config = require('../config');
 
 router.get('/', function(req, res) {
+  res.setLocale(config.locale);
   res.render('index', { community: config.community,
                         tokenRequired: !!config.inviteToken });
 });
