@@ -1,19 +1,24 @@
 /*
 
-Go Lang Basics:
+GoLang Basics (from golang.org):
 
-blue: #375EAB;
-light-blue: #E0EBF5;
-dark-grey: #222;
+Colors:
+	blue: #375EAB;
+	light-blue: #E0EBF5;
+	dark-grey: #222;
 
-red: #933;
-grey: #E0EBF5;
-white: #fff;
-black: #000;
+	red: #933;
+	grey: #E0EBF5;
+	white: #fff;
+	black: #000;
 
-border-radius: 5px;
 
-font: Arial, sans-serif;
+Corners Radius: 5px;
+
+Typography: Arial, sans-serif;
+
+Base Size: 16px;
+
 */
 
 * {
@@ -21,10 +26,12 @@ font: Arial, sans-serif;
 }
 
 html, body {
-	font-family: 'Arial', sans-serif;
-	background-color: #E0EBF5;
+	margin: 0;
+	padding: 0;
 	height: 100%;
 	width: 100%;
+	background-color: #E0EBF5;
+	font-family: 'Arial', sans-serif;
 	font-size: 16px;
 }
 
