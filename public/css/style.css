@@ -1,158 +1,138 @@
-/* Reset */
+/*
 
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,dfn,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+Go Lang Basics:
 
+blue: #375EAB;
+light-blue: #E0EBF5;
+dark-grey: #222;
 
+red: #933;
+grey: #E0EBF5;
+white: #fff;
+black: #000;
 
-html,body{
-margin:0;
-padding:0;
-font-family: 'Lato', sans-serif;
-background: #fff url(../images/bg.jpg) center top no-repeat;
-background-size: cover;
-height: 100%;
-width: 100%;
+border-radius: 5px;
+
+font: Arial, sans-serif;
+*/
+
+* {
+	box-sizing: border-box;
 }
 
-
-#wrapper{
-max-width: 100%;
-width: 940px;
-margin: 0 auto;
+html, body {
+	font-family: 'Arial', sans-serif;
+	background-color: #E0EBF5;
+	height: 100%;
+	width: 100%;
+	font-size: 16px;
 }
 
-.main{
-max-width: 100%;
-width: 940px;
-float: left;
+main {
+	position: absolute;
+	width: 100%;
+	max-width: 40em;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
-.header, .content, .bottom, .sep2{
-width: 100%;
-float: left;
+.header {
+	width: 100%;
+	margin-bottom: 1em;
 }
 
-
-
-.header{
-	margin-top: 160px;
-	margin-bottom: 40px;
+.gopher {
+	margin: 0;
 }
 
-
-h1{
-font-family: 'Open Sans', sans-serif;
-color: #fff;
-text-align: center;
-font-size: 50px;
-font-weight: 300;
-margin: 0 0 10px 0;
+.gopher > img {
+	display: block;
+	margin: 0 auto;
+	width: 50%;
 }
 
-
-h1 strong{
-font-size: 38px;
-font-weight: 700;
+h1 {
+	color: #222;
+	text-align: center;
+	font-size: 4em;
+	font-weight: 300;
+	margin: 0 0 0.25em 0;
 }
 
-h2{
+h2 {
 	text-align: center;
 	font-weight: 300;
-	font-size: 20px;
-		color: #ffffff;
-
+	font-size: 1.2em;
+	color: #222;
+	margin: 0;
+	padding: 0 1em;
 }
 
-h2 strong{
+h2 strong {
 	font-weight: 700;
 	font-style: italic;
 }
 
-
-.information{
-width: 480px;
-padding-top: 35px;
-margin: 0 auto;
+h3 {
+	font-size: 2em;
+	font-weight: 600;
+	color: #fff;
 }
 
-h3{
-font-size: 28px;
-font-weight: 600;
-color: #ffffff;
+.information p {
+	font-size: 16px;
+	color: #fff;
 }
 
-.information p{
-font-size: 16px;
-color: #ffffff;
-display: block;
+.form {
+	padding: 0 2em;
 }
 
-.form{
-	float: left;
-	width: 478px;
-	margin-top: 20px;
+.field {
+	width: 100%;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #375EAB;
+	padding: 10px;
+	margin-bottom: 1em;
+	font-size: 16px;
+	color: #222;
 }
 
-.field{
-background: url(../images/field.png) repeat;
-width: 448px;
--webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;
-border: none;
-font-style: italic;
-font-family: 'Lato', sans-serif;
-font-size: 16px;
-color: #ffffff;
-float: left;
-padding: 15px;
-margin-bottom: 15px;
+.field:focus {
+	outline: none;
 }
 
-@media only screen and (max-device-width: 420px)  {
-	.information{
-		width: 100%;
-	}
-	.form{
-		width: 100%;
-	}
-
-	.field {
-		width: 90%;
-		padding-left: 5%;
-		padding-right: 5%;
-	}
-}
-
-.submit{
-padding: 3px 10px;
--webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;
-margin-left: -78px;
-margin-top: 12px;
-background: #ffffff;
-border: none;
-float: left;
-font-family: 'Lato', sans-serif;
-font-size: 14px;
-font-weight: bold;
-cursor: pointer;
-}
-
-
-.submit:hover{
-background: #eeeeee;
+.submit {
+	display: block;
+	margin: 0 auto;
+	padding: 10px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: #375EAB;
+	border: none;
+	color: #fff;
+	font-size: 1em;
+	cursor: pointer;
 }
 
 .error {
-  color: #FE7070;
-  font-weight: 700;
-  font-size: 25px;
+	color: #933;
+	font-weight: 700;
+	font-size: 2em;
 }
 
 a {
-  color: #92BCF2;
-  font-weight: 700;
+	color: #92BCF2;
+	font-weight: 700;
 }
 
-a:visited,
-a:hover {
-  color: #7EB6FF;
+a:visited, a:hover {
+	color: #7EB6FF;
 }
