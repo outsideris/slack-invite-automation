@@ -12,7 +12,7 @@ var routes = require('./routes/index');
 var app = express();
 
 i18n.configure({
-    defaultLocale: "en",
+    defaultLocale: "pt",
     directory: __dirname + '/locales',
     autoReload: true
 });

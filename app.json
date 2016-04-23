@@ -4,13 +4,14 @@
   "repository": "https://github.com/outsideris/slack-invite-automation",
   "keywords": ["node", "slack", "invite"],
   "env": {
+    "LOCALE": "pt-br",
     "COMMUNITY_NAME": {
       "description": "Your team name",
-      "value": "YOUR TEAM NAME"
+      "value": "Floripa Gophers"
     },
     "SLACK_URL": {
       "description": "Your slack url(ex: socketio.slack.com)",
-      "value": "YOUR-TEAM.slack.com"
+      "value": "floripa-gophers.slack.com"
     },
     "SLACK_TOKEN": {
       "description": "access token of slack, You can generate it in https://api.slack.com/web#auth",
@@ -20,6 +21,6 @@
       "description": "Shared invite token used to get access. Leave blank if you don't want users to have to provide a token.",
       "value": "",
       "required": false
-    }
+    },
   }
 }
