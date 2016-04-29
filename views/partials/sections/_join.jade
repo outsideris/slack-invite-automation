@@ -1,10 +1,10 @@
 .Join-slack
   .Join-form
-    form(action='?', method='POST')
+    form(action='/invite', method='POST')
       fieldset
         div.Join-email#enter-email
           div.loader
-          input#email(type='email', required)
+          input#email(type='email', name='email', required)
           div.indicator(data-content="Email")
         div#terms
           div.Terms
@@ -23,4 +23,4 @@
           div#recaptcha-overlay
           div#recaptcha(class="g-recaptcha" data-callback="isHuman" data-sitekey="6LfMcxoTAAAAAJ4tBiXgOx3Z5bRpt0zL-Hp6Up7T")
         div#joinButton
-          button(type='button') Click to Join!
+          button(type='submit') Click to Join!
