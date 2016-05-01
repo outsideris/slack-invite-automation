@@ -1,0 +1,6 @@
+{
+	"HEADER": "%s 슬랙에 가입하기 위해 아래에 이메일을 입력해주세요",
+	"ENTER_EMAIL": "이메일 주소를 입력해주세요",
+	"ENTER_TOKEN": "invite token을 입력해주세요",
+	"TITLE": "%s 슬랙 커뮤니티 가입하기!"
+}
