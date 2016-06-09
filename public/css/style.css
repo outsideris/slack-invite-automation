@@ -2,6 +2,9 @@
 
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,dfn,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
 
+* {
+  box-sizing: border-box;
+}
 
 html,body{
 margin:0;
@@ -69,7 +72,8 @@ h2 strong{
 
 
 .information{
-width: 480px;
+max-width: 480px;
+min-width: 300px;
 padding-top: 35px;
 margin: 0 auto;
 }
@@ -87,23 +91,26 @@ display: block;
 }
 
 .form{
-	float: left;
-	width: 478px;
-	margin-top: 20px;
+  padding: 10px;
 }
 
+.field-wrapper {
+  max-width: 448px;
+  min-width: 268px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  -webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;
+  background: url(../images/field.png) repeat;
+}
 .field{
-background: url(../images/field.png) repeat;
-width: 448px;
--webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;
-border: none;
-font-style: italic;
-font-family: 'Lato', sans-serif;
-font-size: 16px;
-color: #ffffff;
-float: left;
-padding: 15px;
-margin-bottom: 15px;
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: none;
+  font-style: italic;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 15px;
 }
 
 @media only screen and (max-device-width: 420px)  {
@@ -122,17 +129,17 @@ margin-bottom: 15px;
 }
 
 .submit{
-padding: 3px 10px;
--webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;
-margin-left: -78px;
-margin-top: 12px;
-background: #ffffff;
-border: none;
-float: left;
-font-family: 'Lato', sans-serif;
-font-size: 14px;
-font-weight: bold;
-cursor: pointer;
+  padding: 3px 10px;
+  -webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;
+  margin-right: 18px;
+  margin-top: -50px;
+  background: #ffffff;
+  border: none;
+  float: right;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 
