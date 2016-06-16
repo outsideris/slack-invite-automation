@@ -10,9 +10,10 @@ html
     #wrapper
       .main
         .header
+          img(src="/images/ssdc.logo.opt.svg", class="logo")
           h1
             strong #{community}
-          h2 #{__('HEADER', community)}
+          h2.subline #{__('HEADER', community)}
         .content
           .information
             form(method="POST", action="/invite")#join-form.form
@@ -22,6 +23,14 @@ html
                 .field-wrapper
                   input(type="text", name="token", placeholder="#{__('ENTER_TOKEN')}")#slack-token.field
               input(type="submit", value="Join").submit
+          .pitch
+            h2 Why should I join?
+            ul.perks
+              li Access to tech job listings in the region.
+              li Access to tech events in the region.
+              li Access to mentors to guide your professional development.
+              li Access to great discussions and initiatives in the region.
+              li Access to a forum for personal development.
     script.
       var tokenRequired = #{tokenRequired};
       var form = document.getElementById('join-form');
