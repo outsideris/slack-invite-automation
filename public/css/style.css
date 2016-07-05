@@ -104,6 +104,7 @@ color: #ffffff;
 float: left;
 padding: 15px;
 margin-bottom: 15px;
+outline: none;
 }
 
 @media only screen and (max-device-width: 420px)  {
