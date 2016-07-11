@@ -87,9 +87,9 @@ display: block;
 }
 
 .form{
-	float: left;
-	width: 478px;
-	margin-top: 20px;
+position: relative;
+width: 478px;
+margin-top: 20px;
 }
 
 .field{
@@ -101,35 +101,37 @@ font-style: italic;
 font-family: 'Lato', sans-serif;
 font-size: 16px;
 color: #ffffff;
-float: left;
 padding: 15px;
 margin-bottom: 15px;
 outline: none;
 }
-
-@media only screen and (max-device-width: 420px)  {
+	.field:focus {
+	border: 1px solid #ffffff;
+	padding: 14px;
+	}
+@media only screen and (max-width: 480px)  {
 	.information{
-		width: 100%;
+	width: 100%;
 	}
 	.form{
-		width: 100%;
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
 	}
 
 	.field {
-		width: 90%;
-		padding-left: 5%;
-		padding-right: 5%;
+	width: 90%;
 	}
 }
 
 .submit{
+position: absolute;
+right: 15px;
+top: 13px;
 padding: 3px 10px;
 -webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;
-margin-left: -78px;
-margin-top: 12px;
 background: #ffffff;
 border: none;
-float: left;
 font-family: 'Lato', sans-serif;
 font-size: 14px;
 font-weight: bold;
