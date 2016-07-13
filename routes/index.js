@@ -11,6 +11,7 @@ router.get('/', function(req, res) {
 
 router.post('/invite', function(req, res) {
   if (req.body.email && (!config.inviteToken || (!!config.inviteToken && req.body.token === config.inviteToken))) {
+    console.log('email: ' + req.body.email);
     request.post({
         url: 'https://'+ config.slackUrl + '/api/users.admin.invite',
         form: {
