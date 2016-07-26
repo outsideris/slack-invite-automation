@@ -1,20 +1,18 @@
-Slack Invite Automation
+(Pokemon Go API Slack Invite Automation)
 ------------
 
-A tiny web application to invite a user into your slack team.
+A tiny web application to invite a user into the PgoApi Slack group.
 
-Inspired by
-[How I hacked Slack into a community platform with Typeform](https://levels.io/slack-typeform-auto-invite-sign-ups/)
-and
-[Socket.io's slack page](http://socket.io/slack/).
+
+[Pokemon Go Python API](https://github.com/tejado/pgoapi/) By [Tejado](https://github.com/tejado)
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-## Setting
-fill out `config.js` as your infomation.
+## Settings
+Fill out `config.js` as your infomation.
 
 * `community`: your community or team name to display on join page.
-* `slackUrl` : your slack team url (ex: socketio.slack.com)
+* `slackUrl` : your slack team url (ex: pgoapi.slack.com)
 * `slacktoken` : access token of slack.
   You can generate it in <https://api.slack.com/web#auth>.
   **You should generate the token in admin user, not owner.**
@@ -34,15 +32,13 @@ fill out `config.js` as your infomation.
 [Node.js](http://nodejs.org/) is required.
 
 ```shell
-$ git clone git@github.com:outsideris/slack-invite-automation.git
-$ cd slack-invite-automation
+$ git clone https://github.com/mikeres0/PgoAPI-Slack-Signup.git *folder name*
+$ cd *folder name*
 $ npm install
 $ bin/www
 ```
 
 You can access <http://localhost:3000> on your web browser.
-
-![](https://raw.github.com/outsideris/slack-invite-automation/master/screenshots/join-page.jpg)
 
 ## Run with Docker
 
