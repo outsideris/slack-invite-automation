@@ -6,7 +6,8 @@ A tiny web application to invite a user into the Pokemon Go API Slack group.
 
 [Pokemon Go Python API](https://github.com/tejado/pgoapi/) By [Tejado](https://github.com/tejado)
 
-This is currently deployed on Heroku, deploy here: [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+This is currently deployed on Heroku.
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
 ## Settings
 Fill out `config.js` as your infomation.
