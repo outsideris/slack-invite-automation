@@ -4,6 +4,17 @@
  * Module dependencies.
  */
 
+var path = require('path');
+var fs = require('fs');
+var envFile = path.join(__dirname, '../.env');
+try {
+  fs.accessSync(envFile, fs.F_OK);
+  console.log("loading .env file");
+  require('dotenv').config({path: envFile});
+} catch (e) {
+  // no env file
+}
+
 var app = require('../app');
 var debug = require('debug')('slack-invite-automation:server');
 var http = require('http');
