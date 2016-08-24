@@ -1,0 +1,101 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "siteName": {
+            "type": "string"
+        },
+        "hostingPlanName": {
+            "type": "string"
+        },
+        "siteLocation": {
+            "type": "string",
+            "default": "West US"
+        },
+        "sku": {
+            "type": "string",
+            "allowedValues": [
+                "Free",
+                "Shared",
+                "Basic",
+                "Standard"
+            ],
+            "defaultValue": "Free"
+        },
+        "workerSize": {
+            "type": "string",
+            "allowedValues": [
+                "0",
+                "1",
+                "2"
+            ],
+            "defaultValue": "0"
+        },
+        "Slack: Slack team name": {
+          "type": "string"
+        },
+        "Slack: Slack team url": {
+          "type": "string"
+        },
+        "Slack: Slack token": {
+          "type": "string"
+        },
+        "Slack: Required invite token": {
+          "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+      {
+        "apiVersion": "2014-06-01",
+        "name": "[parameters('hostingPlanName')]",
+        "type": "Microsoft.Web/serverFarms",
+        "location": "[parameters('siteLocation')]",
+        "properties": {
+            "name": "[parameters('hostingPlanName')]",
+            "sku": "[parameters('sku')]",
+            "workerSize": "[parameters('workerSize')]",
+            "numberOfWorkers": 1
+        }
+      },
+      {
+        "type": "Microsoft.Web/sites",
+        "name": "[parameters('siteName')]",
+        "apiVersion": "2015-08-01",
+        "location": "[parameters('siteLocation')]",
+        "tags": {
+            "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]": "empty"
+        },
+        "dependsOn": [
+            "[concat('Microsoft.Web/serverFarms/', parameters('hostingPlanName'))]"
+        ],
+        "properties": {
+          "name": "[parameters('siteName')]",
+          "serverFarm": "[parameters('hostingPlanName')]"
+        },
+        "resources": [{
+          "apiVersion": "2014-04-01",
+          "type": "config",
+          "name": "web",
+          "dependsOn": [
+              "[concat('Microsoft.Web/Sites/', parameters('siteName'))]"
+          ],
+          "properties": {
+              "appSettings": [{
+                  "name": "COMMUNITY_NAME",
+                  "value": "[parameters('Slack: Slack team name')]"
+              }, {
+                  "name": "SLACK_URL",
+                  "value": "[parameters('Slack: Slack team url')]"
+              }, {
+                  "name": "SLACK_TOKEN",
+                  "value": "[parameters('Slack: Slack token')]"
+              }, {
+                  "name": "INVITE_TOKEN",
+                  "value": "[parameters('Slack: Required invite token')]"
+              }]
+          }
+      }]
+    }
+  ]
+}
