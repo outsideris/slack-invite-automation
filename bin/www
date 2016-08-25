@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
-
+// support for .env file to get loaded in to environment variables.
 var path = require('path');
 var fs = require('fs');
 var envFile = path.join(__dirname, '../.env');
@@ -14,6 +11,9 @@ try {
   // no env file
 }
 
+/**
+* Module dependencies.
+*/
 var app = require('../app');
 var debug = require('debug')('slack-invite-automation:server');
 var http = require('http');
