@@ -92,6 +92,11 @@ width: 478px;
 margin-top: 20px;
 }
 
+.gdgicon {
+	width: 100%;
+	text-align: center;
+}
+
 .field{
 background: url(../images/field.png) repeat;
 width: 448px;
