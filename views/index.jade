@@ -20,7 +20,7 @@ html
       p.text-default A comunidade brasileira de WordPress está no Slack também. Digite abaixo o seu email e entre na conversa!
 
       p.text O espaço criado no Slack para a comunidade brasileira de WordPress é aberto para discussões e conversas relacionadas ao WordPress e a comunidade Brasileira e suas cidades, WordCamps, meetups, desenvolvimento de plugins e demais iniciativas. Sendo assim, é importante lembrar que <strong>não oferecemos suporte nesse canal</strong>. Para isso, procure os #[a(href='https://br.wordpress.org/support') fóruns oficiais em português].
-
+      p Já esta cadastrado? Acesse sua conta em #[a(href='https://wpbrasil.slack.com/') https://wpbrasil.slack.com/].
       if success === 1
         div.message.success
           p #{message}
@@ -31,7 +31,6 @@ html
         form(method="POST", action="/invite")#join-form
           input(type="text", name="email", placeholder="Informe seu email")#slack-email
           input(type="submit", name="submit", value="Entrar")#slack-submit
-      p Já esta cadastrado? Acesse sua conta em #[a(href='https://wpbrasil.slack.com/') https://wpbrasil.slack.com/].
     script.
       var form = document.getElementById('join-form');
       var email = document.getElementById('slack-email')
