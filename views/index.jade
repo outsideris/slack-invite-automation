@@ -31,9 +31,7 @@ html
         form(method="POST", action="/invite")#join-form
           input(type="text", name="email", placeholder="Informe seu email")#slack-email
           input(type="submit", name="submit", value="Entrar")#slack-submit
-
-      p.text-default Já esta cadastrado? Acesse sua conta em #[a(href='https://wpbrasil.slack.com/') https://wpbrasil.slack.com/].
-
+      p Já esta cadastrado? Acesse sua conta em #[a(href='https://wpbrasil.slack.com/') https://wpbrasil.slack.com/].
     script.
       var form = document.getElementById('join-form');
       var email = document.getElementById('slack-email')
