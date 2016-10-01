@@ -1,6 +1,6 @@
 {
-  "HEADER": "Slack'te %s topluluğuna katılmak için aşağıya e-mailinizi girin.",
-  "ENTER_EMAIL": "E-mail adresinizi girin",
+  "HEADER": "Slack'te %s topluluğuna katılmak için aşağıya e-mailinizi giriniz.",
+  "ENTER_EMAIL": "E-mail adresinizi giriniz.",
   "ENTER_TOKEN": "Size verilen davet token'ınızı giriniz.",
   "TITLE": "Slack'te %s topluluğuna katılın"
 }
