@@ -1,4 +1,4 @@
-Pokemon Go API Slack Invite Automation
+Pokemon Go API Slack Invite Automation (No longer active)
 ------------
 
 A tiny web application to invite a user into the Pokemon Go API Slack group.
