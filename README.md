@@ -8,15 +8,32 @@ Inspired by
 and
 [Socket.io's slack page](http://socket.io/slack/).
 
+This project support Heroku, Azure and Cloud Foundry.
+
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
 
 ## Settings
 
-##### Local
+You can set variables for your own purpose in `config.js` or environment variables.
 
-Create a file in the root called `.env` with the following key/value pairs. `.env`
-files are added to the `.gitignore`.
+### `config.js`
+
+Fill out `config.js` as your infomation.
+
+* `community`: your community or team name to display on join page.
+* `slackUrl` : your slack team url (ex: socketio.slack.com)
+* `slacktoken` : access token of slack.
+  You can generate it in <https://api.slack.com/web#auth>.
+  **You should generate the token in admin user, not owner.**
+  If you generate the token in owner user, `missing_scope` error will be occurred.
+* `inviteToken`: an optional security measure - if it is set, then that token will be required to get invited.
+* `locale`: application language (currently `en`, `de`, `es`, `fr`, `pt`, `pt-BR`, `zh-CN`, `zh-TW`, `ja` and `ko` available).
+
+### Environment Variables
+You can set environment variables directly or in `.env` file.
+If you want to use a `.env` file, create a file in the root called `.env` with the following key/value pairs.
+(`.env` files are added to the `.gitignore`.)
 
 - `COMMUNITY_NAME` : Your community or team name to display on join page.
 - `SLACK_URL` : Your slack team url (ex: socketio.slack.com)
@@ -45,9 +62,9 @@ You can test your token via curl:
    --compressed
   ```
 
-##### Heroku / Azure
+### Heroku / Azure
 
-Add the application settings that are defined above for the local `.env` file.
+Add the application settings that are defined above enviornment variables.
 
 ## Run
 [Node.js](http://nodejs.org/) is required.
