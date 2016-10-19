@@ -21,14 +21,14 @@ You can set variables for your own purpose in `config.js` or environment variabl
 
 Fill out `config.js` as your infomation.
 
-* `community`: Your community or team name to display on join page.
-* `slackUrl` : Your Slack team url (ex.: socketio.slack.com)
+* `community`: your community or team name to display on join page.
+* `slackUrl` : your slack team url (ex.: socketio.slack.com)
 * `slacktoken` : Your access token for Slack.
   - You can generate it in <https://api.slack.com/custom-integrations/legacy-tokens>.
   - **You should generate the token in admin user, not owner.**
   If you generate the token in owner user, a `missing_scope` error may occur.
 * `inviteToken`: An optional security measure - if it is set, then that token will be required to get invited.
-* `locale`: Application language (currently `de`, `en`, `es`, `fr`, `ja`, `ko`, `pl`, `pt`, `pt-BR`, `tr`, `zh-CN` and `zh-TW` available).
+* `locale`: Application language (currently `cs`, `de`, `en`, `es`, `fr`, `ja`, `ko`, `pl`, `pt`, `pt-BR`, `tr`, `zh-CN` and `zh-TW` available).
 
 ### Environment Variables
 You can set environment variables directly or in `.env` file.
@@ -42,7 +42,7 @@ If you want to use a `.env` file, create a file in the root called `.env` with t
   - **You should generate the token as an admin user, not owner.**
   If you generate the token in owner user, a `missing_scope` error may occur.
 - `INVITE_TOKEN`: An optional security measure - if it is set, then that token will be required to get invited.
-- `LOCALE`: Application language (currently `de`, `en`, `es`, `fr`, `ja`, `ko`, `pl`, `pt`, `pt-BR`, `tr`, `zh-CN` and `zh-TW` available).
+- `LOCALE`: Application language (currently `cs`, `de`, `en`, `es`, `fr`, `ja`, `ko`, `pl`, `pt`, `pt-BR`, `tr`, `zh-CN` and `zh-TW` available).
 
 **Sample**
 
