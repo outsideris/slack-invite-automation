@@ -28,7 +28,7 @@ Fill out `config.js` as your infomation.
   **You should generate the token in admin user, not owner.**
   If you generate the token in owner user, `missing_scope` error will be occurred.
 * `inviteToken`: an optional security measure - if it is set, then that token will be required to get invited.
-* `locale`: application language (currently `en`, `de`, `es`, `fr`, `pt`, `pt-BR`, `zh-CN`, `zh-TW`, `ja` and `ko` available).
+* `locale`: application language (currently `cs`, `en`, `de`, `es`, `fr`, `pt`, `pt-BR`, `zh-CN`, `zh-TW`, `ja` and `ko` available).
 
 ### Environment Variables
 You can set environment variables directly or in `.env` file.
@@ -42,7 +42,7 @@ If you want to use a `.env` file, create a file in the root called `.env` with t
   **You should generate the token as an admin user, not owner.**
   If you generate the token in owner user, a `missing_scope` error may occur.
 - `INVITE_TOKEN`: An optional security measure - if it is set, then that token will be required to get invited.
-- `LOCALE`: Application language (currently `en`, `de`, `es`, `fr`, `pt`, `zh-CN`, `zh-TW`, `ja` and `ko` available).
+- `LOCALE`: Application language (currently `cs`, `en`, `de`, `es`, `fr`, `pt`, `zh-CN`, `zh-TW`, `ja` and `ko` available).
 
 **Sample**
 
