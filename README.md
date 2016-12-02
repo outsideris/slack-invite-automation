@@ -51,7 +51,7 @@ COMMUNITY_NAME=socketio
 SLACK_URL=socketio.slack.com
 SLACK_TOKEN=ffsdf-5411524512154-16875416847864648976-45641654654654654-444334f43b34566f
 INVITE_TOKEN=abcdefg
-LOCAL=en
+LOCALE=en
 ```
 
 You can test your token via curl:
