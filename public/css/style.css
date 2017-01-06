@@ -133,6 +133,9 @@ h3 {
     margin-top: 20px;
 }
 .field {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;    
     background: rgb(249, 249, 249);
     width: 15rem;
     color: #171519;
@@ -198,12 +201,12 @@ h3 {
     font-family: 'Exo 2', sans-serif;
 }
 a {
-    color: #92BCF2;
+    color: #ff7e7e;
     font-weight: 700;
 }
 a:visited,
 a:hover {
-    color: #7EB6FF;
+    color: #ff7e7e;
 }
 .logo {
     height: 2.5rem;

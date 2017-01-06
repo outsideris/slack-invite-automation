@@ -16,10 +16,10 @@ html
         .content
           .information
             form(method="POST", action="/invite")#join-form.form
-              input(type="email", name="email", placeholder="#{__('ENTER_EMAIL')}")#slack-email.field
+              input(type="email", name="email", placeholder="#{__('ENTER_EMAIL')}", required=true)#slack-email.field
               if tokenRequired
                 input(type="text", name="token", placeholder="#{__('ENTER_TOKEN')}")#slack-token.field
-              input(type="submit", value="Get Invite").submit
+              button(type="submit").submit Get Invite
     script.
       var tokenRequired = #{tokenRequired};
       var form = document.getElementById('join-form');
