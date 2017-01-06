@@ -5,13 +5,13 @@ html
     meta(name="viewport", content="width=device-width, initial-scale=1")
     title #{__('TITLE', community)}
     link(href="css/style.css", rel="stylesheet", type="text/css")
-    link(href="//fonts.googleapis.com/css?family=Exo+2:400,500", rel="stylesheet", type="text/css")
+    link(href="//fonts.googleapis.com/css?family=Exo+2:400,500,600", rel="stylesheet", type="text/css")
   body
+    img(src="https://boilermake.org/assets/images/hammers-white.svg", class="logo")
     #wrapper
       .main
         .header
-          h1
-            strong #{community}
+          h1 #{community}
           h2 #{__('HEADER', community)}
         .content
           .information

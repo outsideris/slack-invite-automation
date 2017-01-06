@@ -1,175 +1,213 @@
 /* Reset */
 
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,dfn,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
-
-
-html,body{
-margin:0;
-padding:0;
-font-family: 'Exo 2', sans-serif;
-background: #fff url(../images/bg.jpg) center top no-repeat;
-background-size: cover;
-height: 100%;
-width: 100%;
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
 }
-
-
-#wrapper{
-max-width: 100%;
-width: 940px;
-margin: 0 auto;
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }
-
-.main{
-max-width: 100%;
-width: 940px;
-float: left;
+fieldset,
+img {
+    border: 0;
 }
-
-.header, .content, .bottom, .sep2{
-width: 100%;
-float: left;
+address,
+caption,
+dfn,
+th,
+var {
+    font-style: normal;
+    font-weight: normal;
 }
-
-
-
-.header{
-	margin-top: 160px;
-	margin-bottom: 40px;
+li {
+    list-style: none;
 }
-
-
-h1{
-font-family: 'Exo 2', sans-serif;
-color: #fff;
-text-align: center;
-font-size: 50px;
-font-weight: 500;
-margin: 0 0 10px 0;
+caption,
+th {
+    text-align: left;
 }
-
-
-h1 strong{
-font-size: 38px;
-font-weight: 700;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
 }
-
-h2{
-	text-align: center;
-	font-weight: 500;
-	font-size: 20px;
-		color: #ffffff;
-
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Exo 2', sans-serif;
+    background: #fff url(../images/slackbg.png) center top no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
 }
-
-h2 strong{
-	font-weight: 700;
-	font-style: italic;
+#wrapper {
+    max-width: 100%;
+    width: 940px;
+    margin: 0 auto;
 }
-
-
-.information{
-width: 480px;
-padding-top: 35px;
-margin: 0 auto;
+.main {
+    max-width: 100%;
+    width: 940px;
+    float: left;
 }
-
-h3{
-font-size: 28px;
-font-weight: 600;
-color: #ffffff;
+.header,
+.content,
+.bottom,
+.sep2 {
+    width: 100%;
+    float: left;
 }
-
-.information p{
-font-size: 16px;
-color: #ffffff;
-display: block;
+.header {
+    margin-top: 160px;
+    margin-bottom: 40px;
 }
-
-.form{
-position: relative;
-width: 478px;
-margin-top: 20px;
+h1 {
+    font-family: 'Exo 2', sans-serif;
+    color: #fff;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+    margin: 0 0 10px 0;
 }
-
+h1 strong {
+    font-size: 38px;
+    font-weight: 700;
+}
+h2 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    color: #ffffff;
+}
+h2 strong {
+    font-weight: 700;
+    font-style: italic;
+}
+.information {
+    width: 480px;
+    margin: 0 auto;
+}
+h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff;
+}
+.information p {
+    font-size: 16px;
+    color: #ffffff;
+    display: block;
+}
+.form {
+    position: relative;
+    width: 478px;
+    margin-top: 20px;
+}
 .field {
     background: rgb(249, 249, 249);
     width: 15rem;
     color: #171519;
-	width: 448px;
-	padding: 15px;
-	margin-bottom: 15px;
-	font-weight: 500;
-	outline: none;
-	border: 1px solid #ffffff;
-	border-radius: 3px;
-	font-family: 'Exo 2', sans-serif;
-	font-size: 16px;
+    width: 448px;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    outline: none;
+    border: 1px solid #ffffff;
+    border-radius: 3px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 16px;
 }
-
-@media only screen and (max-width: 480px)  {
-	.information{
-	width: 100%;
-	}
-	.form{
-	width: 90%;
-	margin-left: 5%;
-	margin-right: 5%;
-	}
-
-	.field {
-	width: 90%;
-	}
-	.submit {
-		position:relative !important;
-		display: block;
-	}
+@media only screen and (max-width: 480px) {
+    .information {
+        width: 100%;
+    }
+    .form {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .field {
+        width: 90%;
+    }
+    .submit {
+        position: relative !important;
+        display: block;
+    }
 }
-
 .submit {
-	position: absolute;
-	right: 4px;
-	top: 7px;
-	padding: 3px 10px;
+    position: absolute;
+    right: 4px;
+    top: 7px;
+    padding: 3px 10px;
     height: 2.5rem;
     border-radius: 3px;
     border: none;
     padding: .5rem .75rem;
-	font-family: 'Exo 2', sans-serif;
-	font-size: 16px;
-	font-weight: 500;
-	cursor: pointer;
-	background-color: #594269;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #594269;
     color: #f9f9f9;
     -webkit-transition: all .25s ease;
     transition: all .25s ease;
-    line-height: 22px; 
+    line-height: 22px;
 }
-
-
 .submit:hover {
-	background-color: #2c232b;
-	border: none;
-	outline: none;
+    background-color: #2c232b;
+    border: none;
+    outline: none;
 }
 .submit:focus {
-	border:none;
-	outline:none;
+    border: none;
+    outline: none;
 }
-
 .error {
-  color: #FE7070;
-  font-weight: 700;
-  font-size: 25px;
-  font-family: 'Exo 2', sans-serif;
+    color: #FE7070;
+    font-weight: 700;
+    font-size: 25px;
+    font-family: 'Exo 2', sans-serif;
 }
-
 a {
-  color: #92BCF2;
-  font-weight: 700;
+    color: #92BCF2;
+    font-weight: 700;
 }
-
 a:visited,
 a:hover {
-  color: #7EB6FF;
+    color: #7EB6FF;
+}
+.logo {
+    height: 2.5rem;
+    position: relative;
+    top: 20px;
+    left: 30px;
 }
