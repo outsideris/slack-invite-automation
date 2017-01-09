@@ -13,3 +13,6 @@ html
         .header
           h1 #{community}
           h2(class="#{isFailed?'error':''}") !{message}
+          if isFailed
+            h2
+              a(href="http://boilermake4.slack.com/signup") Use this link to directly signup through Slack
