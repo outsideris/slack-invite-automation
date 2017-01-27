@@ -8,7 +8,7 @@ Inspired by
 and
 [Socket.io's slack page](http://socket.io/slack/).
 
-This project support Heroku, Azure and Cloud Foundry.
+This project supports Heroku, Azure and Cloud Foundry.
 
 [![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 [![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
@@ -21,14 +21,14 @@ You can set variables for your own purpose in `config.js` or environment variabl
 
 Fill out `config.js` as your infomation.
 
-* `community`: your community or team name to display on join page.
-* `slackUrl` : your slack team url (ex: socketio.slack.com)
-* `slacktoken` : access token of slack.
-  You can generate it in <https://api.slack.com/web#auth>.
-  **You should generate the token in admin user, not owner.**
-  If you generate the token in owner user, `missing_scope` error will be occurred.
-* `inviteToken`: an optional security measure - if it is set, then that token will be required to get invited.
-* `locale`: application language (currently `de`, `en`, `es`, `fr`, `ja`, `ko`, `pl`, `pt`, `pt-BR`, `tr`, `zh-CN` and `zh-TW` available).
+* `community`: Your community or team name to display on join page.
+* `slackUrl` : Your slack team url (ex.: socketio.slack.com)
+* `slacktoken` : Your access token for slack.
+  - You can generate it in <https://api.slack.com/web#auth>.
+  - **You should generate the token in admin user, not owner.**
+  If you generate the token in owner user, a `missing_scope` error may occur.
+* `inviteToken`: An optional security measure - if it is set, then that token will be required to get invited.
+* `locale`: Application language (currently `de`, `en`, `es`, `fr`, `ja`, `ko`, `pl`, `pt`, `pt-BR`, `tr`, `zh-CN` and `zh-TW` available).
 
 ### Environment Variables
 You can set environment variables directly or in `.env` file.
@@ -36,13 +36,13 @@ If you want to use a `.env` file, create a file in the root called `.env` with t
 (`.env` files are added to the `.gitignore`.)
 
 - `COMMUNITY_NAME` : Your community or team name to display on join page.
-- `SLACK_URL` : Your slack team url (ex: socketio.slack.com)
+- `SLACK_URL` : Your slack team url (ex.: socketio.slack.com)
 - `SLACK_TOKEN` : Your access token for slack.
   - You can generate it in <https://api.slack.com/web#auth>.
-  **You should generate the token as an admin user, not owner.**
+  - **You should generate the token as an admin user, not owner.**
   If you generate the token in owner user, a `missing_scope` error may occur.
 - `INVITE_TOKEN`: An optional security measure - if it is set, then that token will be required to get invited.
-- `LOCALE`: Application language (currently `en`, `de`, `es`, `fr`, `pt`, `zh-CN`, `zh-TW`, `ja` and `ko` available).
+- `LOCALE`: Application language (currently `de`, `en`, `es`, `fr`, `ja`, `ko`, `pl`, `pt`, `pt-BR`, `tr`, `zh-CN` and `zh-TW` available).
 
 **Sample**
 
@@ -64,7 +64,7 @@ You can test your token via curl:
 
 ### Heroku / Azure
 
-Add the application settings that are defined above enviornment variables.
+Add the application settings that are defined in the environment variables above.
 
 ## Run
 [Node.js](http://nodejs.org/) is required.
