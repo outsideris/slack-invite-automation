@@ -1,12 +1,12 @@
 Slack Invite Automation
 ------------
 
-A tiny web application to invite a user into your slack team.
+A tiny web application to invite a user into your Slack team.
 
 Inspired by
 [How I hacked Slack into a community platform with Typeform](https://levels.io/slack-typeform-auto-invite-sign-ups/)
 and
-[Socket.io's slack page](http://socket.io/slack/).
+[Socket.io's Slack page](http://socket.io/slack/).
 
 This project supports Heroku, Azure and Cloud Foundry.
 
@@ -22,8 +22,8 @@ You can set variables for your own purpose in `config.js` or environment variabl
 Fill out `config.js` as your infomation.
 
 * `community`: Your community or team name to display on join page.
-* `slackUrl` : Your slack team url (ex.: socketio.slack.com)
-* `slacktoken` : Your access token for slack.
+* `slackUrl` : Your Slack team url (ex.: socketio.slack.com)
+* `slacktoken` : Your access token for Slack.
   - You can generate it in <https://api.slack.com/web#auth>.
   - **You should generate the token in admin user, not owner.**
   If you generate the token in owner user, a `missing_scope` error may occur.
@@ -36,8 +36,8 @@ If you want to use a `.env` file, create a file in the root called `.env` with t
 (`.env` files are added to the `.gitignore`.)
 
 - `COMMUNITY_NAME` : Your community or team name to display on join page.
-- `SLACK_URL` : Your slack team url (ex.: socketio.slack.com)
-- `SLACK_TOKEN` : Your access token for slack.
+- `SLACK_URL` : Your Slack team url (ex.: socketio.slack.com)
+- `SLACK_TOKEN` : Your access token for Slack.
   - You can generate it in <https://api.slack.com/web#auth>.
   - **You should generate the token as an admin user, not owner.**
   If you generate the token in owner user, a `missing_scope` error may occur.
