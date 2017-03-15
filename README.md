@@ -24,7 +24,7 @@ Fill out `config.js` as your infomation.
 * `community`: Your community or team name to display on join page.
 * `slackUrl` : Your Slack team url (ex.: socketio.slack.com)
 * `slacktoken` : Your access token for Slack.
-  - You can generate it in <https://api.slack.com/web#auth>.
+  - You can generate it in <https://api.slack.com/custom-integrations/legacy-tokens>.
   - **You should generate the token in admin user, not owner.**
   If you generate the token in owner user, a `missing_scope` error may occur.
 * `inviteToken`: An optional security measure - if it is set, then that token will be required to get invited.
