@@ -30,7 +30,7 @@ deployment:
     branch: develop
     commands:
       - ./bin/cf-login.sh
-      - cf set-env join-govau-guides-develop COMMUNITY_NAME "$COMMUNITY_NAME" > /dev/null 2>&1
-      - cf set-env join-govau-guides-develop SLACK_URL "$SLACK_URL" > /dev/null 2>&1
-      - cf set-env join-govau-guides-develop SLACK_TOKEN "$SLACK_TOKEN" > /dev/null 2>&1
+      - cf set-env join-govau-guides-develop COMMUNITY_NAME "$COMMUNITY_NAME" > /dev/null
+      - cf set-env join-govau-guides-develop SLACK_URL "$SLACK_URL" > /dev/null
+      - cf set-env join-govau-guides-develop SLACK_TOKEN "$SLACK_TOKEN" > /dev/null
       - cf push join-govau-guides-develop -f cloudfoundry-manifest.yml
