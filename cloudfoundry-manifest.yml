@@ -1,0 +1,7 @@
+---
+applications:
+- name: join-govau-guides
+  command: node bin/www
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
+  memory: 64M
+  instances: 1

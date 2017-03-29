@@ -1,0 +1,30 @@
+---
+machine:
+  node:
+    version: 7.5.0
+  timezone:
+    Australia/Sydney
+
+dependencies:
+  pre:
+    - curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github' #getting the cf tool
+    - sudo dpkg -i cf-cli_amd64.deb
+    - cf -v
+  override:
+    - npm install
+
+test:
+  override:
+    - echo 'no tests'
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - ./bin/predeploy.sh
+      - cf push -f cloudfoundry-manifest.yml
+  development:
+    branch: develop
+    commands:
+      - ./bin/predeploy.sh
+      - cf push join-govau-guides-develop -f cloudfoundry-manifest.yml
