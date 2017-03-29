@@ -16,9 +16,5 @@
     "morgan": "^1.6.0",
     "request": "^2.62.0",
     "serve-favicon": "^2.3.0"
-  },
-  "main": "index.js",
-  "repository": "git@github.com:govau/guides-slack-invite-automation.git",
-  "author": "Simon Schwartz <simon.schwartz0@gmail.com>",
-  "license": "MIT"
+  }
 }
