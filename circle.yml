@@ -22,9 +22,9 @@ deployment:
     branch: master
     commands:
       - cf login -a https://api.system.platform.digital.gov.au -o $CF_ORG_PROD -s $CF_SPACE_PROD -u $CF_USER_PROD -p $CF_PASSWORD_PROD > /dev/null 2>&1
-      # - cf set-env join-govau-guides COMMUNITY_NAME "$COMMUNITY_NAME" > /dev/null 2>&1
-      # - cf set-env join-govau-guides SLACK_URL "$SLACK_URL" > /dev/null 2>&1
-      # - cf set-env join-govau-guides SLACK_TOKEN "$SLACK_TOKEN" > /dev/null 2>&1
+      - cf set-env join-govau-guides COMMUNITY_NAME "$COMMUNITY_NAME" > /dev/null 2>&1
+      - cf set-env join-govau-guides SLACK_URL "$SLACK_URL" > /dev/null 2>&1
+      - cf set-env join-govau-guides SLACK_TOKEN "$SLACK_TOKEN" > /dev/null 2>&1
       - cf push -f cloudfoundry-manifest.yml > /dev/null 2>&1
   # development:
   #   branch: develop
