@@ -21,7 +21,8 @@ deployment:
   production:
     branch: master
     commands:
-      - ./bin/cf-login.sh
+      - cf login -a https://api.system.platform.digital.gov.au -o $CF_ORG_PROD -s $CF_SPACE_PROD -u $CF_USER_PROD -p $CF_PASSWORD_PROD
+      - cf target -o $CF_ORG_PROD -s $CF_SPACE_PROD
       - cf set-env join-govau-guides COMMUNITY_NAME "$COMMUNITY_NAME" > /dev/null 2>&1
       - cf set-env join-govau-guides SLACK_URL "$SLACK_URL" > /dev/null 2>&1
       - cf set-env join-govau-guides SLACK_TOKEN "$SLACK_TOKEN" > /dev/null 2>&1
@@ -29,7 +30,8 @@ deployment:
   development:
     branch: develop
     commands:
-      - ./bin/cf-login.sh
+      - cf login -a https://api.system.staging.digital.gov.au -o $CF_ORG_PROD -s $CF_SPACE_PROD -u $CF_USER_PROD -p $CF_PASSWORD_PROD
+      - cf target -o $CF_ORG_STAGING -s $CF_SPACE_STAGING
       - cf set-env join-govau-guides-develop COMMUNITY_NAME "$COMMUNITY_NAME" > /dev/null 2>&1
       - cf set-env join-govau-guides-develop SLACK_URL "$SLACK_URL" > /dev/null 2>&1
       - cf set-env join-govau-guides-develop SLACK_TOKEN "$SLACK_TOKEN" > /dev/null 2>&1
