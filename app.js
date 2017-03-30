@@ -8,7 +8,6 @@ var express = require('express'),
     i18n = require("i18n");
 
 var routes = require('./routes/index');
-var rootPath = '/join-slack/';
 
 var app = express();
 
@@ -33,7 +32,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, rootPath + 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 
