@@ -2,14 +2,15 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var config = require('../config');
+var rootPath = '/join-slack/';
 
-router.get('/', function(req, res) {
+router.get(rootPath, function(req, res) {
   res.setLocale(config.locale);
   res.render('index', { community: config.community,
                         tokenRequired: !!config.inviteToken });
 });
 
-router.post('/invite', function(req, res) {
+router.post(rootPath + '/invite', function(req, res) {
 
 	var sanitise = /^(([^<>()\[\]\\.,;:\s%@&{}"`'$#!]+(\.[^<>()\[\]\\.,;:\s%@&{}"`'!$#]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	var sanitisedEmail = sanitise.test(req.body.email)
