@@ -10,8 +10,13 @@ router.get('/', function(req, res) {
 });
 
 router.post('/invite', function(req, res) {
-  if (req.body.email && (!config.inviteToken || (!!config.inviteToken && req.body.token === config.inviteToken))) {
-    request.post({
+
+	var sanitise = /^(([^<>()\[\]\\.,;:\s%@&{}"`'$#!]+(\.[^<>()\[\]\\.,;:\s%@&{}"`'!$#]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	var sanitisedEmail = sanitise.test(req.body.email)
+
+  if (req.body.email && sanitisedEmail && (!config.inviteToken || (!!config.inviteToken && req.body.token === config.inviteToken))) {
+
+		request.post({
         url: 'https://'+ config.slackUrl + '/api/users.admin.invite',
         form: {
           email: req.body.email,
@@ -66,6 +71,10 @@ router.post('/invite', function(req, res) {
       if (req.body.token && req.body.token !== config.inviteToken) {
         errMsg.push('the token you entered is wrong');
       }
+    }
+
+		if (!sanitisedEmail) {
+      errMsg.push('your email contains characters that are not allowed');
     }
 
     res.render('result', {
