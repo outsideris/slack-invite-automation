@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var config = require('../config');
-var rootPath = '/join-slack/';
+var rootPath = '/join-slack';
 
 router.get(rootPath, function(req, res) {
   res.setLocale(config.locale);
@@ -48,12 +48,13 @@ router.post(rootPath + '/invite', function(req, res) {
           } else if (error === 'invalid_email') {
             error = 'The email you entered is an invalid email.';
           } else if (error === 'invalid_auth') {
-            error = 'Something has gone wrong. Please contact a system administrator.';
+            error = 'Something has gone wrong.<br>' +
+                    'Please contact us at guides@digital.gov.au and we can manually add you to the Slack channel';
           }
 
           res.render('result', {
             community: config.community,
-            message: 'Failed! ' + error,
+            message: 'Uh oh! ' + error,
             isFailed: true
           });
         }
@@ -75,12 +76,14 @@ router.post(rootPath + '/invite', function(req, res) {
     }
 
 		if (!sanitisedEmail) {
-      errMsg.push('your email contains characters that are not allowed');
+      errMsg.push('your email contains characters that are not allowed.<br>' +
+                  'The following characters are not allowed ! < > ( ) ; : % @ & { }'
+      );
     }
 
     res.render('result', {
       community: config.community,
-      message: 'Failed! ' + errMsg.join(' and ') + '.',
+      message: 'Oh no! ' + errMsg.join(' and ') + '.',
       isFailed: true
     });
   }
