@@ -51,7 +51,7 @@ a {
   display: block;
   padding: 0;
   margin: 0;
-} 
+}
 
 .text {
   font-size: 1em;
@@ -85,21 +85,42 @@ input[type="text"] {
   color: #666;
   padding: .5rem;
   font-size: 1rem;
-  width: 80%;
+  width: 100%;
   height: 40px;
   outline: 0;
   display: inline-block;
 }
 
-input[type="submit"] {
-  border: 1px solid #ccc;
-  color: #555;
+input[type="submit"],
+form .forum {
   padding: .5rem;
+  margin: 1.5rem;
   font-size: 1rem;
   cursor: pointer;
-  width: 20%;
-  height: 40px;
+  width: 40%;
   outline: 0;
-  float: right;
   display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: top;
+  white-space: normal;
+}
+
+@media screen and (max-width: 600px) {
+  input[type="submit"],
+  form .forum {
+    margin: 1rem 0;
+    width: 100%;
+  }
+}
+
+input[type="submit"] {
+  border: 1px solid #ebccd1;
+  background-color: #f2dede;
+  color: #a94442;
+}
+form .forum {
+  border: 1px solid #bce8f1;
+  background-color: #d9edf7;
+  color: #31708f;
 }
