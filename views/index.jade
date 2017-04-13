@@ -21,7 +21,7 @@ html
           div.message.error
             p #{message}
         form(method="POST", action="/invite")#join-form
-          input(type="text", name="email", placeholder="Informe seu e-mail")#slack-email
+          input(type="email", name="email", placeholder="Informe seu e-mail", required)#slack-email
           input(type="submit", name="submit", value="Quero participar e ajudar a comunidade")#slack-submit
           #[a(href='https://br.wordpress.org/support/forums/').forum Quero ajuda com um problema no WordPress]
 
@@ -33,5 +33,6 @@ html
       form.addEventListener('submit', function(evt) {
         if (!email.value) {
           evt.preventDefault();
+
         }
       });

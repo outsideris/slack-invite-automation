@@ -80,7 +80,8 @@ a {
   margin-top: 1rem;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="email"] {
   border: 1px solid #ddd;
   color: #666;
   padding: .5rem;
