@@ -3,15 +3,28 @@ html
   include ./includes/head.jade
   body
     .content
-      h1.title Entre na comunidade <span>#{community}</span> no Slack!
+      h1.title Entre na comunidade <span>WordPress Brasil</span> no Slack!
 
-      p O #[a(href='https://slack.com/') Slack] é um aplicativo para troca de mensagens, hoje usado pela #[a(href='https://make.wordpress.org/chat/') comunidade WordPress] para conversas e contribuições em tempo real entre seus usuários.
+      p Utilizamos o #[a(href='https://slack.com/', target='_blank') Slack] como ferramenta para comunicação e contribuições em tempo real.
 
       img(src="img/wpbrasil-slack.png").img-logo
 
-      p.text-default A comunidade brasileira de WordPress está no Slack também. Digite abaixo o seu e-mail e entre na conversa!
+      p O Slack da comunidade WordPress Brasil é um espaço aberto para:
 
-      p.text O espaço criado no Slack para a comunidade brasileira de WordPress é aberto para discussões e conversas relacionadas ao WordPress e a comunidade Brasileira e suas cidades, WordCamps, meetups, desenvolvimento de plugins e demais iniciativas. Sendo assim, é importante lembrar que <strong>não oferecemos suporte nesse canal</strong>. Para isso, procure os #[a(href='https://br.wordpress.org/support') fóruns oficiais em português].
+      ul
+        li Discussões e organização:
+          ul
+            li #[a(href='https://br.wordpress.org/support/', target='_blank') Fóruns de suporte].
+            li #[a(href='https://translate.wordpress.org/locale/pt-br', target='_blank') Traduções de vários projetos].
+            li Eventos da comunidade, como WordCamps e meetups.
+            li Projetos da comunidade, como o #[a(href='http://wpod.in/', target='_blank') Framework Odin].
+        li Divulgação de eventos da comunidade, como meetups e WordCamps.
+        li Avisos e comunicados para todos que participam como voluntários.
+        li E outras iniciativas ligadas a comunidade brasileira.
+
+      p.info Observe que <strong>não oferecemos suporte nesse canal</strong> para as suas instalações do WordPress. Caso você busque ajuda, recomendamos a utilização dos #[a(href='https://br.wordpress.org/support/', target='_blank') fóruns oficiais em português].
+
+      p Digite abaixo o seu e-mail e comece a participar da comunidade!
 
       if success === 1
         div.message.success
@@ -22,8 +35,8 @@ html
             p #{message}
         form(method="POST", action="/invite")#join-form
           input(type="email", name="email", placeholder="Informe seu e-mail", required)#slack-email
-          input(type="submit", name="submit", value="Quero participar e ajudar a comunidade")#slack-submit
-          #[a(href='https://br.wordpress.org/support/forums/').forum Quero ajuda com um problema no WordPress]
+          input(type="submit", name="submit", value="Quero participar e ajudar a comunidade!")#slack-submit
+          #[a(href='https://br.wordpress.org/support/forums/').button-forum Quero ajuda com um problema no WordPress!]
 
       p Já está cadastrado? Acesse sua conta em #[a(href='https://wpbrasil.slack.com/') wpbrasil.slack.com].
 
