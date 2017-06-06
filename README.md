@@ -6,7 +6,7 @@ A tiny web application to invite a user into your Slack team.
 Inspired by
 [How I hacked Slack into a community platform with Typeform](https://levels.io/slack-typeform-auto-invite-sign-ups/)
 and
-[Socket.io's Slack page](http://socket.io/slack/).
+Socket.io's Slack page.
 
 This project supports Heroku, Azure and Cloud Foundry.
 
