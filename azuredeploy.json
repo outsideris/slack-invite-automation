@@ -5,9 +5,6 @@
         "siteName": {
             "type": "string"
         },
-        "hostingPlanName": {
-            "type": "string"
-        },
         "siteLocation": {
             "type": "string",
             "default": "West US"
@@ -44,15 +41,17 @@
           "type": "string"
         }
     },
-    "variables": {},
+    "variables": {
+        "hostingPlanName": "[concat(parameters('siteName'), '-plan')]"
+    },
     "resources": [
       {
         "apiVersion": "2014-06-01",
-        "name": "[parameters('hostingPlanName')]",
+        "name": "[variables('hostingPlanName')]",
         "type": "Microsoft.Web/serverFarms",
         "location": "[parameters('siteLocation')]",
         "properties": {
-            "name": "[parameters('hostingPlanName')]",
+            "name": "[variables('hostingPlanName')]",
             "sku": "[parameters('sku')]",
             "workerSize": "[parameters('workerSize')]",
             "numberOfWorkers": 1
@@ -64,14 +63,14 @@
         "apiVersion": "2015-08-01",
         "location": "[parameters('siteLocation')]",
         "tags": {
-            "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]": "empty"
+            "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', variables('hostingPlanName'))]": "empty"
         },
         "dependsOn": [
-            "[concat('Microsoft.Web/serverFarms/', parameters('hostingPlanName'))]"
+            "[concat('Microsoft.Web/serverFarms/', variables('hostingPlanName'))]"
         ],
         "properties": {
           "name": "[parameters('siteName')]",
-          "serverFarm": "[parameters('hostingPlanName')]"
+          "serverFarmId": "[variables('hostingPlanName')]"
         },
         "resources": [{
           "apiVersion": "2014-04-01",
