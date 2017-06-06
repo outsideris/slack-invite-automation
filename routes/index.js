@@ -2,16 +2,22 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var config = require('../config');
+var rootPath = '/join-slack';
 
-router.get('/', function(req, res) {
+router.get(rootPath, function(req, res) {
   res.setLocale(config.locale);
   res.render('index', { community: config.community,
                         tokenRequired: !!config.inviteToken });
 });
 
-router.post('/invite', function(req, res) {
-  if (req.body.email && (!config.inviteToken || (!!config.inviteToken && req.body.token === config.inviteToken))) {
-    request.post({
+router.post(rootPath + '/invite', function(req, res) {
+
+	var sanitise = /^(([^<>()\[\]\\.,;:\s%@&{}"`'$#!]+(\.[^<>()\[\]\\.,;:\s%@&{}"`'!$#]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	var sanitisedEmail = sanitise.test(req.body.email)
+
+  if (req.body.email && sanitisedEmail && (!config.inviteToken || (!!config.inviteToken && req.body.token === config.inviteToken))) {
+
+		request.post({
         url: 'https://'+ config.slackUrl + '/api/users.admin.invite',
         form: {
           email: req.body.email,
@@ -42,12 +48,13 @@ router.post('/invite', function(req, res) {
           } else if (error === 'invalid_email') {
             error = 'The email you entered is an invalid email.';
           } else if (error === 'invalid_auth') {
-            error = 'Something has gone wrong. Please contact a system administrator.';
+            error = 'Something has gone wrong.<br>' +
+                    'Please contact us at guides@digital.gov.au and we can manually add you to the Slack channel';
           }
 
           res.render('result', {
             community: config.community,
-            message: 'Failed! ' + error,
+            message: 'Uh oh! ' + error,
             isFailed: true
           });
         }
@@ -68,9 +75,15 @@ router.post('/invite', function(req, res) {
       }
     }
 
+		if (!sanitisedEmail) {
+      errMsg.push('your email contains characters that are not allowed.<br>' +
+                  'The following characters are not allowed ! < > ( ) ; : % @ & { }'
+      );
+    }
+
     res.render('result', {
       community: config.community,
-      message: 'Failed! ' + errMsg.join(' and ') + '.',
+      message: 'Oh no! ' + errMsg.join(' and ') + '.',
       isFailed: true
     });
   }

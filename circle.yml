@@ -1,0 +1,36 @@
+---
+machine:
+  node:
+    version: 7.5.0
+  timezone:
+    Australia/Sydney
+
+dependencies:
+  pre:
+    - curl -v -L -o cf-cli_amd64.deb 'https://cli.run.pivotal.io/stable?release=debian64&source=github' #getting the cf tool
+    - sudo dpkg -i cf-cli_amd64.deb
+    - cf -v
+  override:
+    - yarn
+
+test:
+  override:
+    - echo 'no test'
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - cf login -a https://api.system.platform.digital.gov.au -o $CF_ORG_PROD -s $CF_SPACE_PROD -u $CF_USER_PROD -p $CF_PASSWORD_PROD > /dev/null 2>&1
+      - cf set-env join-govau-guides COMMUNITY_NAME "$COMMUNITY_NAME" > /dev/null 2>&1
+      - cf set-env join-govau-guides SLACK_URL "$SLACK_URL" > /dev/null 2>&1
+      - cf set-env join-govau-guides SLACK_TOKEN "$SLACK_TOKEN" > /dev/null 2>&1
+      - cf push -f cloudfoundry-manifest.yml > /dev/null 2>&1
+  development:
+    branch: develop
+    commands:
+      - cf login -a https://api.system.staging.digital.gov.au -o $CF_ORG_STAGING -s $CF_SPACE_STAGING -u $CF_USER_STAGING -p $CF_PASSWORD_STAGING > /dev/null 2>&1
+      - cf set-env join-govau-guides-develop COMMUNITY_NAME "$COMMUNITY_NAME" > /dev/null 2>&1
+      - cf set-env join-govau-guides-develop SLACK_URL "$SLACK_URL" > /dev/null 2>&1
+      - cf set-env join-govau-guides-develop SLACK_TOKEN "$SLACK_TOKEN" > /dev/null 2>&1
+      - cf push join-govau-guides-develop -f cloudfoundry-manifest.yml > /dev/null 2>&1

@@ -6,10 +6,13 @@ html
     title #{__('TITLE', community)}
     link(href="css/style.css", rel="stylesheet", type="text/css")
     link(href="//fonts.googleapis.com/css?family=Lato:300,400,700,900,700italic|Open+Sans:700italic,400,600,300,700,800", rel="stylesheet", type="text/css")
-  body
-    #wrapper
-      .main
-        .header
-          h1
+  body.uikit-body.uikit-grid
+    .container
+      .grids.col-md-6
+        header.join-slack-header
+          h1.uikit-display-6
             strong #{community}
-          h2(class="#{isFailed?'error':''}") !{message}
+        main
+          .uikit-page-alerts(class="#{isFailed?'uikit-page-alerts--error':'uikit-page-alerts--success'}")
+            p !{message}
+          a(href="/join-slack") Back to email submission page
