@@ -70,7 +70,7 @@ Add the application settings that are defined in the environment variables above
 [Node.js](http://nodejs.org/) is required.
 
 ```shell
-$ git clone git@github.com:outsideris/slack-invite-automation.git
+$ git clone https://github.com/outsideris/slack-invite-automation.git
 $ cd slack-invite-automation
 $ npm install
 $ npm start
@@ -85,7 +85,7 @@ You can access <http://localhost:3000> on your web browser.
 It's easy to run this service if you have installed Docker on your system.
 
 ```shell
-$ git clone git@github.com:outsideris/slack-invite-automation.git
+$ git clone https://github.com/outsideris/slack-invite-automation.git
 $ cd slack-invite-automation
 $ docker build -t slack-invite-automation .
 $ docker run -it --rm -e COMMUNITY_NAME="YOUR-TEAM-NAME" -e SLACK_URL="YOUR-TEAM.slack.com" -e SLACK_TOKEN="YOUR-ACCESS-TOKEN" -p 3000:3000 slack-invite-automation
