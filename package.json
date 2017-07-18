@@ -5,6 +5,9 @@
   "scripts": {
     "start": "node ./bin/www"
   },
+  "engines": {
+    "node": "6.11.1"
+  },
   "dependencies": {
     "body-parser": "^1.14.0",
     "cookie-parser": "^1.4.0",
