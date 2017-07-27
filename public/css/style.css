@@ -7,7 +7,9 @@ html,body{
 margin:0;
 padding:0;
 font-family: 'Open Sans', sans-serif;
-background: #fff url(../images/bg.jpg) center top no-repeat;
+/*background: #fff url(../images/bg.jpg) center top no-repeat; */
+background-color:#67a2dc;
+
 background-size: cover;
 height: 100%;
 width: 100%;
@@ -41,7 +43,7 @@ float: left;
 
 h1{
 font-family: 'Open Sans', sans-serif;
-color: #fff;
+color: #000000;
 text-align: center;
 font-size: 50px;
 font-weight: 300;
@@ -58,7 +60,7 @@ h2{
 	text-align: center;
 	font-weight: 300;
 	font-size: 20px;
-		color: #ffffff;
+		color: #000000;
 
 }
 
@@ -77,12 +79,12 @@ margin: 0 auto;
 h3{
 font-size: 28px;
 font-weight: 600;
-color: #ffffff;
+color: #000000;
 }
 
 .information p{
 font-size: 16px;
-color: #ffffff;
+color: #000000;
 display: block;
 }
 
@@ -100,13 +102,13 @@ border: none;
 font-style: italic;
 font-family: 'Lato', sans-serif;
 font-size: 16px;
-color: #ffffff;
+color: #000000;
 padding: 15px;
 margin-bottom: 15px;
 outline: none;
 }
 	.field:focus {
-	border: 1px solid #ffffff;
+	border: 1px solid #000000;
 	padding: 14px;
 	}
 @media only screen and (max-width: 480px)  {
