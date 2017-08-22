@@ -158,3 +158,8 @@ a:visited,
 a:hover {
   color: #7EB6FF;
 }
+
+input[type="submit"]:focus {
+  outline: none;
+  border: none;
+}
