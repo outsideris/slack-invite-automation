@@ -65,7 +65,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Exo 2', sans-serif;
-    background: #fff url(../images/slackbg.jpg) center top no-repeat;
+    background: #fff url(../images/slackbg.png) center top no-repeat;
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -135,7 +135,7 @@ h3 {
 .field {
     -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;    
+    appearance: none;
     background: rgb(249, 249, 249);
     width: 15rem;
     color: #171519;
@@ -179,7 +179,7 @@ h3 {
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-    background-color: #594269;
+    background-color: #201853;
     color: #f9f9f9;
     -webkit-transition: all .25s ease;
     transition: all .25s ease;
