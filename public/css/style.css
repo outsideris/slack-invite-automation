@@ -65,7 +65,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Exo 2', sans-serif;
-    background: #fff url(../images/slackbg.png) center top no-repeat;
+    background: linear-gradient(to top, #a62278 0%,#1f2a52 100%);
     background-size: cover;
     height: 100%;
     width: 100%;
@@ -88,7 +88,7 @@ body {
     float: left;
 }
 .header {
-    margin-top: 160px;
+    margin-top: 260px;
     margin-bottom: 40px;
 }
 h1 {
