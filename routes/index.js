@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
-var request = require('request');
-var config = require('../config');
+const express = require('express');
+const router = express.Router();
+const request = require('request');
+const config = require('../config');
 
 router.get('/', function(req, res) {
   res.setLocale(config.locale);
@@ -33,7 +33,7 @@ router.post('/invite', function(req, res) {
               message: 'Success! Check &ldquo;'+ req.body.email +'&rdquo; for an invite from Slack.'
             });
           } else {
-            var error = body.error;
+            const error = body.error;
             if (error === 'already_invited' || error === 'already_in_team') {
               res.render('result', {
                 community: config.community,
@@ -82,7 +82,7 @@ router.post('/invite', function(req, res) {
       doInvite();
     }
   } else {
-    var errMsg = [];
+    const errMsg = [];
     if (!req.body.email) {
       errMsg.push('your email is required');
     }

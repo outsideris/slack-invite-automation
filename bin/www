@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 // support for .env file to get loaded in to environment variables.
-var path = require('path');
-var fs = require('fs');
-var envFile = path.join(__dirname, '../.env');
+const path = require('path');
+const fs = require('fs');
+const envFile = path.join(__dirname, '../.env');
 try {
   fs.accessSync(envFile, fs.F_OK);
   require('dotenv').config({path: envFile});
@@ -14,16 +14,16 @@ try {
 /**
 * Module dependencies.
 */
-var app = require('../app');
-var debug = require('debug')('slack-invite-automation:server');
-var http = require('http');
+const app = require('../app');
+const debug = require('debug')('slack-invite-automation:server');
+const http = require('http');
 
 /**
  * Normalize a port into a number, string, or false.
  * @param {int} val
  */
 function normalizePort(val) {
-    var port = parseInt(val, 10);
+    const port = parseInt(val, 10);
     if (isNaN(port)) {
         return val;
     } else if (port >= 0) {
@@ -38,14 +38,14 @@ function normalizePort(val) {
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+const server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
