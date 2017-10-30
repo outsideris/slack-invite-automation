@@ -26,7 +26,7 @@ Fill out `config.js` as your infomation.
 * `inviteToken`: An optional security measure - if it is set, then that token will be required to get invited.
 * `recaptchaSiteKey`: An optional security measure - if it is set, and `recaptchaSecretKey` is set, then a captcha will be required to get invited.
 * `recaptchaSecretKey`: An optional security measure - if it is set, and `recaptchaSiteKey` is set, then a captcha will be required to get invited.
-* `locale`: Application language (currently `cs`, `de`, `en`, `es`, `fr`, `it`,  `ja`, `ko`, `pl`, `pt`, `pt-BR`, `tr`, `zh-CN` and `zh-TW` available).
+* `locale`: Application language (currently `cs`, `de`, `en`, `es`, `fr`, `it`,  `ja`, `ko`, `nl`, `pl`, `pt`, `pt-BR`, `tr`, `zh-CN` and `zh-TW` available).
 
 ### Environment Variables
 You can set environment variables directly or in `.env` file.
@@ -39,7 +39,7 @@ If you want to use a `.env` file, create a file in the root called `.env` with t
 - `INVITE_TOKEN`: An optional security measure - if it is set, then that token will be required to get invited.
 - `RECAPTCHA_SITE`: An optional security measure - used to enable reCAPTCHA.
 - `RECAPTCHA_SECRET`: An optional security measure - used to enable reCAPTCHA.
-- `LOCALE`: Application language (currently `cs`, `de`, `en`, `es`, `fr`, `it`, `ja`, `ko`, `pl`, `pt`, `pt-BR`, `tr`, `zh-CN` and `zh-TW` available).
+- `LOCALE`: Application language (currently `cs`, `de`, `en`, `es`, `fr`, `it`, `ja`, `ko`, `nl`, `pl`, `pt`, `pt-BR`, `tr`, `zh-CN` and `zh-TW` available).
 
 **Sample**
 
