@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const request = require('request');
+
 const config = require('../config');
+const { badge } = require('../lib/badge');
 
 router.get('/', function(req, res) {
   res.setLocale(config.locale);
@@ -33,7 +35,7 @@ router.post('/invite', function(req, res) {
               message: 'Success! Check &ldquo;'+ req.body.email +'&rdquo; for an invite from Slack.'
             });
           } else {
-            const error = body.error;
+            let error = body.error;
             if (error === 'already_invited' || error === 'already_in_team') {
               res.render('result', {
                 community: config.community,
@@ -103,6 +105,38 @@ router.post('/invite', function(req, res) {
       isFailed: true
     });
   }
+});
+
+router.get('/badge.svg', (req, res) => {
+  request.get({
+    url: 'https://'+ config.slackUrl + '/api/users.list',
+    qs: {
+      token: config.slacktoken,
+      presence: true
+    }
+  }, function(err, httpResponse, body) {
+    try {
+      body = JSON.parse(body);
+    } catch(e) {
+      return res.status(404).send('');
+    }
+    if (!body.members) {
+      return res.status(404).send('');
+    }
+
+    const members = body.members.filter(function(m) {
+      return !m.is_bot;
+    });
+    const total = members.length;
+    const presence = members.filter(function(m) {
+      return m.presence === 'active';
+    }).length;
+
+    res.type('svg');
+    res.set('Cache-Control', 'max-age=0, no-cache');
+    res.set('Pragma', 'no-cache');
+    res.send(badge(presence, total));
+  });
 });
 
 module.exports = router;

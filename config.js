@@ -4,9 +4,7 @@ module.exports = {
   // your slack team url (ex: socketio.slack.com)
   slackUrl: process.env.SLACK_URL || 'YOUR-TEAM.slack.com',
   // access token of slack
-  // You can generate it in https://api.slack.com/web#auth
-  // You should generate the token in admin user, not owner.
-  // If you generate the token in owner user, missing_scope error will be occurred.
+  // see https://github.com/outsideris/slack-invite-automation#issue-token
   //
   // You can test your token via curl:
   //   curl -X POST 'https://YOUR-SLACK-TEAM.slack.com/api/users.admin.invite' \
