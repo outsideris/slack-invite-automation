@@ -120,3 +120,14 @@ There are two ways to issue the access token.
     * It authorizes the `client` permission. Otherwise, you can see `{"ok":false,"error":"missing_scope","needed":"client","provided":"admin"}` error.
     * Your `CLIENT_ID` could be found in "Basic Information" menu of your app page that you just install.
     * Your `TEAM_ID` could be found in <https://api.slack.com/methods/team.info/test>
+
+## Badge
+
+![](https://raw.github.com/outsideris/slack-invite-automation/master/screenshots/badge.png)
+
+You can use the badge to show status of user in your slack.
+
+```
+<img src="https://your.domain/badge.svg">
+```
+
