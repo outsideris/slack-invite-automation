@@ -9,7 +9,7 @@
     "body-parser": "^1.18.0",
     "cookie-parser": "^1.4.0",
     "debug": "^3.1.0",
-    "dotenv": "^4.0.0",
+    "dotenv": "^5.0.1",
     "express": "^4.13.0",
     "i18n": "^0.8.3",
     "jade": "^1.11.0",

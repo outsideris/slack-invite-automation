@@ -1,5 +1,4 @@
-FROM node:onbuild
-MAINTAINER Benjamin Jorand <benjamin.jorand@gmail.com>
+FROM node:8-alpine
 
 EXPOSE 3000
 
