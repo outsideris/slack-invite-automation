@@ -80,6 +80,14 @@ You can access <http://localhost:3000> on your web browser.
 ## Run with Docker
 
 It's easy to run this service if you have installed Docker on your system.
+Pull [the Docker image from Docker Hub](https://hub.docker.com/r/outsideris/slack-invite-automation/).
+
+```shell
+$ docker pull outsideris/slack-invite-automation
+$ docker run -it --rm -e COMMUNITY_NAME="YOUR-TEAM-NAME" -e SLACK_URL="YOUR-TEAM.slack.com" -e SLACK_TOKEN="YOUR-ACCESS-TOKEN" -p 3000:3000 outsideris/slack-invite-automation
+```
+
+Or, You can build a Docker image yourself.
 
 ```shell
 $ git clone https://github.com/outsideris/slack-invite-automation.git
