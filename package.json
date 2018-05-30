@@ -16,6 +16,7 @@
     "morgan": "^1.6.0",
     "pug": "^2.0.0-rc.4",
     "request": "^2.62.0",
-    "serve-favicon": "^2.3.0"
+    "serve-favicon": "^2.3.0",
+    "sanitize": "^2.1.0"
   }
 }

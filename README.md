@@ -75,7 +75,7 @@ $ npm start
 
 You can access <http://localhost:3000> on your web browser.
 
-![](https://raw.github.com/outsideris/slack-invite-automation/master/screenshots/join-page.jpg)
+![](screenshots/join-page.jpg)
 
 ## Run with Docker
 
@@ -105,24 +105,24 @@ There are two ways to issue the access token.
 1. Visit <https://api.slack.com/custom-integrations/legacy-tokens>.
 1. Click `Create token`.
 
-    ![](https://raw.github.com/outsideris/slack-invite-automation/master/screenshots/legacy-token.gif)
+    ![](screenshots/legacy-token.gif)
 
 ### OAuth tokens
 1. Visit <https://api.slack.com/apps> and Create New App.
 
-    ![](https://raw.github.com/outsideris/slack-invite-automation/master/screenshots/oauth1.gif)
+    ![](screenshots/oauth1.gif)
 
 1. Click "Permissions".
 
-    ![](https://raw.github.com/outsideris/slack-invite-automation/master/screenshots/oauth2.gif)
+    ![](screenshots/oauth2.gif)
 
 1. In "OAuth & Permissions" page, select `admin` scope under "Permission Scopes" menu and save changes.
 
-    ![](https://raw.github.com/outsideris/slack-invite-automation/master/screenshots/oauth3.gif)
+    ![](screenshots/oauth3.gif)
 
 1. Click "Install App to Team".
 
-    ![](https://raw.github.com/outsideris/slack-invite-automation/master/screenshots/oauth4.gif)
+    ![](screenshots/oauth4.gif)
 
 1. Visit <https://slack.com/oauth/authorize?&client_id=CLIENT_ID&team=TEAM_ID&install_redirect=install-on-team&scope=admin+client> in your browser and authorize it.
     * It authorizes the `client` permission. Otherwise, you can see `{"ok":false,"error":"missing_scope","needed":"client","provided":"admin"}` error.
@@ -131,11 +131,20 @@ There are two ways to issue the access token.
 
 ## Badge
 
-![](https://raw.github.com/outsideris/slack-invite-automation/master/screenshots/badge.png)
+![](screenshots/badge.png)
 
 You can use the badge to show status of user in your slack.
 
-```
-<img src="https://your.domain/badge.svg">
-```
+* With default colors:
+    ```
+    <img src="https://your.domain/badge.svg">
+    ```
 
+* With custom colors:
+    
+    * `?colorA=abcdef`	Set background of the left part (hex color only)
+    * `?colorB=fedcba`	Set background of the right part (hex color only)
+    
+    ```
+    <img src="https://your.domain/badge.svg?colorA=155799&colorB=159957">
+    ```

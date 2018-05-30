@@ -5,6 +5,8 @@ const request = require('request');
 const config = require('../config');
 const { badge } = require('../lib/badge');
 
+const sanitize = require('sanitize');
+
 router.get('/', function(req, res) {
   res.setLocale(config.locale);
   res.render('index', { community: config.community,
@@ -132,10 +134,20 @@ router.get('/badge.svg', (req, res) => {
       return m.presence === 'active';
     }).length;
 
+    const hexColor = /^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
+    sanitize.middleware.mixinFilters(req);
+
     res.type('svg');
     res.set('Cache-Control', 'max-age=0, no-cache');
     res.set('Pragma', 'no-cache');
-    res.send(badge(presence, total));
+    res.send(
+        badge(
+            presence,
+            total,
+            req.queryPattern('colorA', hexColor),
+            req.queryPattern('colorB', hexColor)
+        )
+    );
   });
 });
 
