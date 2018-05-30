@@ -15,12 +15,12 @@
         "sku": {
             "type": "string",
             "allowedValues": [
-                "Free",
-                "Shared",
-                "Basic",
-                "Standard"
+                "F1",
+                "D1",
+                "B1",
+                "S1"
             ],
-            "defaultValue": "Free"
+            "defaultValue": "F1"
         },
         "workerSize": {
             "type": "string",
@@ -52,10 +52,10 @@
         "type": "Microsoft.Web/serverfarms",
         "location": "[parameters('siteLocation')]",
         "properties": {
-            "name": "[parameters('hostingPlanName')]",
-            "sku": "[parameters('sku')]",
-            "workerSize": "[parameters('workerSize')]",
-            "numberOfWorkers": 1
+            "name": "[parameters('hostingPlanName')]"
+        },
+        "sku": {
+          "name": "[parameters('sku')]"
         }
       },
       {
