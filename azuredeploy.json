@@ -81,7 +81,8 @@
             ]
         },
         "subpath": {
-            "type": "string"
+            "type": "string",
+            "defaultValue": "/"
         }
     },
     "variables": {},
@@ -139,8 +140,7 @@
                         "RECAPTCHA_SECRET": "[parameters('recaptchaSecret')]",
                         "LOCALE": "[parameters('locale')]",
                         "SUBPATH": "[parameters('subpath')]",
-                        "WEBSITE_NODE_DEFAULT_VERSION": "8.9.4",
-                        "command": "bash scripts/azuredeploy.sh"
+                        "WEBSITE_NODE_DEFAULT_VERSION": "8.9.4"
                     }
                 },
                 {
