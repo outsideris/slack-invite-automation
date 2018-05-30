@@ -94,8 +94,8 @@ Or, You can build a Docker image yourself.
 ```shell
 $ git clone https://github.com/outsideris/slack-invite-automation.git
 $ cd slack-invite-automation
-$ docker build -t slack-invite-automation .
-$ docker run -it --rm -e COMMUNITY_NAME="YOUR-TEAM-NAME" -e SLACK_URL="YOUR-TEAM.slack.com" -e SLACK_TOKEN="YOUR-ACCESS-TOKEN" -p 3000:3000 slack-invite-automation
+$ docker build -t outsideris/slack-invite-automation .
+$ docker run -it --rm -e COMMUNITY_NAME="YOUR-TEAM-NAME" -e SLACK_URL="YOUR-TEAM.slack.com" -e SLACK_TOKEN="YOUR-ACCESS-TOKEN" -p 3000:3000 outsideris/slack-invite-automation
 ```
 
 ## Issue token
@@ -144,8 +144,8 @@ You can use the badge to show status of user in your slack.
 
 * With custom colors:
     
-    * `?colorA=abcdef`	Set background of the left part (hex color only)
-    * `?colorB=fedcba`	Set background of the right part (hex color only)
+    * `?colorA=abcdef` Set background of the left part (hex color only)
+    * `?colorB=fedcba` Set background of the right part (hex color only)
     
     ```
     <img src="https://your.domain/badge.svg?colorA=155799&colorB=159957">
