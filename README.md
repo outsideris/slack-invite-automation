@@ -41,7 +41,7 @@ If you want to use a `.env` file, create a file in the root called `.env` with t
 - `RECAPTCHA_SITE`: An optional security measure - used to enable reCAPTCHA.
 - `RECAPTCHA_SECRET`: An optional security measure - used to enable reCAPTCHA.
 - `LOCALE`: Application language (currently `cs`, `de`, `en`, `es`, `fr`, `it`, `ja`, `ko`, `nl`, `pl`, `pt`, `pt-BR`, `tr`, `zh-CN` and `zh-TW` available).
-* `SUBPATH`: Sub-path in URL. For example, if `/example` is set, it's served in `/example`, not `/`. Default is `/`.
+- `SUBPATH`: Sub-path in URL. For example, if `/example` is set, it's served in `/example`, not `/`. Default is `/`.
 
 **Sample**
 
@@ -143,10 +143,10 @@ You can use the badge to show status of user in your slack.
     ```
 
 * With custom colors:
-    
+
     * `?colorA=abcdef` Set background of the left part (hex color only)
     * `?colorB=fedcba` Set background of the right part (hex color only)
-    
+
     ```
     <img src="https://your.domain/badge.svg?colorA=155799&colorB=159957">
     ```

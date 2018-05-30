@@ -52,7 +52,7 @@
         "type": "Microsoft.Web/serverfarms",
         "location": "[parameters('siteLocation')]",
         "properties": {
-            "name": "[parameters('hostingPlanName')]"
+          "name": "[parameters('hostingPlanName')]"
         },
         "sku": {
           "name": "[parameters('sku')]"
@@ -67,11 +67,11 @@
             "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]": "empty"
         },
         "dependsOn": [
-            "[concat('Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]"
+          "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
         ],
         "properties": {
           "name": "[parameters('siteName')]",
-          "serverFarm": "[parameters('hostingPlanName')]"
+          "serverFarmId": "[parameters('hostingPlanName')]"
         },
         "resources": [{
           "apiVersion": "2015-08-01",
