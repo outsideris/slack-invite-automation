@@ -31,77 +31,139 @@
             ],
             "defaultValue": "0"
         },
-        "Slack: Slack team name": {
-          "type": "string"
+        "repoURL": {
+            "type": "string",
+            "defaultValue": "https://github.com/outsideris/slack-invite-automation.git"
         },
-        "Slack: Slack team url": {
-          "type": "string"
+        "branch": {
+            "type": "string",
+            "defaultValue": "master"
         },
-        "Slack: Slack token": {
-          "type": "string"
+        "communityName": {
+            "type": "string"
         },
-        "Slack: Required invite token": {
-          "type": "string"
+        "slackUrl": {
+            "type": "string"
+        },
+        "slackToken": {
+            "type": "string"
+        },
+        "inviteToken": {
+            "type": "string"
+        },
+        "recaptchaSite": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "recaptchaSecret": {
+            "type": "string",
+            "defaultValue": ""
+        },
+        "locale": {
+            "type": "string",
+            "defaultValue": "en",
+            "allowedValues": [
+                "cs",
+                "de",
+                "en",
+                "es",
+                "fr",
+                "it",
+                "ja",
+                "ko",
+                "nl",
+                "pl",
+                "pt",
+                "pt-BR",
+                "tr",
+                "zh-CN",
+                "zh-TW"
+            ]
+        },
+        "subpath": {
+            "type": "string"
         }
     },
     "variables": {},
     "resources": [
-      {
-        "apiVersion": "2015-08-01",
-        "name": "[parameters('hostingPlanName')]",
-        "type": "Microsoft.Web/serverfarms",
-        "location": "[parameters('siteLocation')]",
-        "properties": {
-          "name": "[parameters('hostingPlanName')]"
+        {
+            "apiVersion": "2015-08-01",
+            "name": "[parameters('hostingPlanName')]",
+            "type": "Microsoft.Web/serverfarms",
+            "location": "[parameters('siteLocation')]",
+            "properties": {
+                "name": "[parameters('hostingPlanName')]"
+            },
+            "sku": {
+                "name": "[parameters('sku')]"
+            }
         },
-        "sku": {
-          "name": "[parameters('sku')]"
+        {
+            "apiVersion": "2015-08-01",
+            "name": "[parameters('siteName')]",
+            "type": "Microsoft.Web/sites",
+            "location": "[parameters('siteLocation')]",
+            "tags": {
+                "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]": "empty"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
+            ],
+            "properties": {
+                "name": "[parameters('siteName')]",
+                "serverFarmId": "[parameters('hostingPlanName')]"
+            },
+            "resources": [
+                {
+                    "apiVersion": "2015-08-01",
+                    "name": "web",
+                    "type": "config",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/Sites', parameters('siteName'))]"
+                    ],
+                    "properties": {}
+                },
+                {
+                    "apiVersion": "2015-08-01",
+                    "name": "appsettings",
+                    "type": "config",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/Sites', parameters('siteName'))]"
+                    ],
+                    "properties": {
+                        "COMMUNITY_NAME": "[parameters('communityName')]",
+                        "SLACK_URL": "[parameters('slackUrl')]",
+                        "SLACK_TOKEN": "[parameters('slackToken')]",
+                        "INVITE_TOKEN": "[parameters('inviteToken')]",
+                        "RECAPTCHA_SITE": "[parameters('recaptchaSite')]",
+                        "RECAPTCHA_SECRET": "[parameters('recaptchaSecret')]",
+                        "LOCALE": "[parameters('locale')]",
+                        "SUBPATH": "[parameters('subpath')]",
+                        "WEBSITE_NODE_DEFAULT_VERSION": "8.9.4",
+                        "command": "bash scripts/azuredeploy.sh"
+                    }
+                },
+                {
+                    "apiVersion": "2015-08-01",
+                    "name": "web",
+                    "type": "sourcecontrols",
+                    "dependsOn": [
+                        "[resourceId('Microsoft.Web/Sites', parameters('siteName'))]",
+                        "[concat('Microsoft.Web/Sites/', parameters('siteName'), '/config/web')]"
+                    ],
+                    "properties": {
+                        "RepoUrl": "[parameters('repoURL')]",
+                        "branch": "[parameters('branch')]",
+                        "IsManualIntegration": true
+                    }
+                }
+            ]
         }
-      },
-      {
-        "apiVersion": "2015-08-01",
-        "name": "[parameters('siteName')]",
-        "type": "Microsoft.Web/sites",
-        "location": "[parameters('siteLocation')]",
-        "tags": {
-            "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]": "empty"
-        },
-        "dependsOn": [
-          "[resourceId('Microsoft.Web/serverfarms', parameters('hostingPlanName'))]"
-        ],
-        "properties": {
-          "name": "[parameters('siteName')]",
-          "serverFarmId": "[parameters('hostingPlanName')]"
-        },
-        "resources": [{
-          "apiVersion": "2015-08-01",
-          "type": "config",
-          "name": "web",
-          "dependsOn": [
-              "[concat('Microsoft.Web/Sites/', parameters('siteName'))]"
-          ],
-          "properties": {
-              "appSettings": [{
-                  "name": "COMMUNITY_NAME",
-                  "value": "[parameters('Slack: Slack team name')]"
-              }, {
-                  "name": "SLACK_URL",
-                  "value": "[parameters('Slack: Slack team url')]"
-              }, {
-                  "name": "SLACK_TOKEN",
-                  "value": "[parameters('Slack: Slack token')]"
-              }, {
-                  "name": "INVITE_TOKEN",
-                  "value": "[parameters('Slack: Required invite token')]"
-              }]
-          }
-      }]
+    ],
+    "outputs": {
+        "siteUri": {
+            "type": "string",
+            "value": "[concat('https://',reference(resourceId('Microsoft.Web/sites', parameters('siteName'))).hostNames[0])]"
+        }
     }
-  ],
-  "outputs": {
-    "siteUri": {
-      "type": "string",
-      "value": "[concat('https://',reference(resourceId('Microsoft.Web/sites', parameters('siteName'))).hostNames[0])]"
-    }
-  }
 }
