@@ -36,4 +36,8 @@ html
         if (tokenRequired && !token.value) {
           evt.preventDefault();
         }
+        var recaptcha = document.getElementById('g-recaptcha-response');
+        if (recaptcha && recaptcha.value === '') {
+          evt.preventDefault();
+        }
       });
