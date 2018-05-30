@@ -47,9 +47,9 @@
     "variables": {},
     "resources": [
       {
-        "apiVersion": "2014-06-01",
+        "apiVersion": "2015-08-01",
         "name": "[parameters('hostingPlanName')]",
-        "type": "Microsoft.Web/serverFarms",
+        "type": "Microsoft.Web/serverfarms",
         "location": "[parameters('siteLocation')]",
         "properties": {
             "name": "[parameters('hostingPlanName')]",
@@ -59,22 +59,22 @@
         }
       },
       {
-        "type": "Microsoft.Web/sites",
-        "name": "[parameters('siteName')]",
         "apiVersion": "2015-08-01",
+        "name": "[parameters('siteName')]",
+        "type": "Microsoft.Web/sites",
         "location": "[parameters('siteLocation')]",
         "tags": {
             "[concat('hidden-related:', resourceGroup().id, '/providers/Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]": "empty"
         },
         "dependsOn": [
-            "[concat('Microsoft.Web/serverFarms/', parameters('hostingPlanName'))]"
+            "[concat('Microsoft.Web/serverfarms/', parameters('hostingPlanName'))]"
         ],
         "properties": {
           "name": "[parameters('siteName')]",
           "serverFarm": "[parameters('hostingPlanName')]"
         },
         "resources": [{
-          "apiVersion": "2014-04-01",
+          "apiVersion": "2015-08-01",
           "type": "config",
           "name": "web",
           "dependsOn": [
@@ -97,5 +97,11 @@
           }
       }]
     }
-  ]
+  ],
+  "outputs": {
+    "siteUri": {
+      "type": "string",
+      "value": "[concat('https://',reference(resourceId('Microsoft.Web/sites', parameters('siteName'))).hostNames[0])]"
+    }
+  }
 }
