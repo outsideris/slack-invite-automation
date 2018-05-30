@@ -1,0 +1,35 @@
+sudo: required
+language: node_js
+node_js:
+- '8'
+
+stages:
+- docker release
+
+services:
+- docker
+
+install:
+- npm install
+env:
+  global:
+  - DOCKER_USER=outsideris
+  # DOCKER_PASS
+  secure: "PdVWvrTmAIsGba/PXf65YB1TTtfWoO9BjW0XdkafzSOXNiS2pgizmAIF6jXbYjzh05iYrvizGZc7Nb6Z0MuxmV3QBUpcb9bYF6WSDNdG1cayIqOk3fBDAnnfqQ+n/rplcJZ21A+prVGUQ4Y8UqENlJOnC+rzPcfT3IyGRY5cIjY="
+
+jobs:
+  include:
+  - stage: docker release
+    script: echo "Deploying Docker image"
+    deploy:
+      provider: script
+      script: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASS
+        docker build -t outsideris/slack-invite-automation:$TRAVIS_TAG .
+        docker tag outsideris/slack-invite-automation:$TRAVIS_TAG outsideris/slack-invite-automation:latest
+        docker push outsideris/slack-invite-automation:$TRAVIS_TAG
+        docker push outsideris/slack-invite-automation:latest
+      skip_cleanup: true
+      on:
+        repo: outsideris/slack-invite-automation
+        tags: true
