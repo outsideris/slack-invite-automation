@@ -150,3 +150,12 @@ You can use the badge to show status of user in your slack.
     ```
     <img src="https://your.domain/badge.svg?colorA=155799&colorB=159957">
     ```
+
+## reCAPTCHA
+Register a new site in [Google reCAPTHCA](https://www.google.com/recaptcha/)
+as reCAPTCHA v2 type.
+
+![](screenshots/recaptcha.gif)
+
+Set "Site key" as `recaptchaSiteKey` or `RECAPTCHA_SITE`,
+and "Secret key" as `recaptchaSecretKey` or `RECAPTCHA_SECRET`.
