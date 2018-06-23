@@ -31,3 +31,8 @@ node_modules
 .env.*
 .idea/
 .envrc
+
+aws/config.sh
+aws/build/
+aws/api-swagger.json
+aws/sam-output.yml
