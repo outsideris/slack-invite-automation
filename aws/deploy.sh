@@ -44,3 +44,12 @@ aws cloudformation deploy \
 	RecaptchaSecretKey="${RecaptchaSecretKey}" \
 	Locale="${Locale}"
 
+Url=$(aws cloudformation describe-stacks --stack-name ${StackName} | grep OutputValue | cut -f 4 -d'"')
+
+echo
+echo 'Deployed Slack Inviter!'
+echo
+echo "Account Id: ${AwsAccountId}"
+echo "    Region: ${AwsRegion}"
+echo "Stack Name: ${StackName}"
+echo "       URL: ${Url}"

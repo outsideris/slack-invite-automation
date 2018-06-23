@@ -1,6 +1,6 @@
 #!/bin/bash
 
-StackName=SlackInviteAutomation
+StackName=SlackInviter
 
 S3BucketArtifacts=your-artifact-bucket
 S3PrefixArtifacts=cloudformation/slack-invite-automation

@@ -1,7 +1,7 @@
 {
 	"AWSTemplateFormatVersion": "2010-09-09",
 	"Transform": "AWS::Serverless-2016-10-31",
-	"Description": "Slack Invite Automation",
+	"Description": "Slack Inviter",
 	"Parameters": {
 		"CommunityName": {
 			"Type": "String",
@@ -35,11 +35,11 @@
 		}
 	},
 	"Resources": {
-		"SlackInviteApi": {
+		"SlackInviterApi": {
 			"Type": "AWS::Serverless::Api",
 			"Properties": {
 				"DefinitionUri": "api-swagger.json",
-				"StageName": "Api",
+				"StageName": "Express",
 				"Variables": {
 					"ExpressFunction": { "Ref": "ExpressFunction" }
 				}
@@ -72,7 +72,7 @@
 					"ExpressProxyApiRoot": {
 						"Type": "Api",
 						"Properties": {
-							"RestApiId": { "Ref": "SlackInviteApi" },
+							"RestApiId": { "Ref": "SlackInviterApi" },
 							"Path": "/",
 							"Method": "ANY"
 						}
@@ -80,12 +80,19 @@
 					"ExpressProxyApiGreedy": {
 						"Type": "Api",
 						"Properties": {
-							"RestApiId": { "Ref": "SlackInviteApi" },
+							"RestApiId": { "Ref": "SlackInviterApi" },
 							"Path": "/{proxy+}",
 							"Method": "ANY"
 						}
 					}
 				}
+			}
+		}
+	},
+	"Outputs": {
+		"Url": {
+			"Value": {
+				"Fn::Sub": "https://${SlackInviterApi}.execute-api.${AWS::Region}.amazonaws.com/${SlackInviterApi.Stage}/"
 			}
 		}
 	}
