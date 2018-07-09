@@ -3,28 +3,6 @@ language: node_js
 node_js:
 - '8'
 
-stages:
-- docker release
-
-services:
-- docker
-
 install:
 - npm install
-env:
-  global:
-  - DOCKER_USER=outsideris
-  # DOCKER_PASS
-  - secure: "G+0bxujtid+khHUJH+iwYhlpsO9dfI+3HQkACyQBHSp20HK5zkufKGOP/1Iq4k0hqhBIv65RO7PM1/CvRE7b60qo6LQfMLnashbq5gZE5Bdpl9zoqAfWY6M+iaR30WA0EX/ORNmZ4TOsnFUv/MJoQva+UoZOY/Y1WF+XkIDNlyAZqErsUToAp7AKiHygVx4v+b49A9HAoDuQhhuz8/26fiDkjqzbRkNeq6X59QdfBqDjlwi2gdi6ja6Tzci/GTbWvhXUIZO7KO4QOMHYZMvobZWU6nnVN/h1l0Ej9bgvUajuRnCXlO1iwIsdt0ClNTNYs85S96zxLi5uYjowoIcSFF1Sfz77rOHFyokx5Fj8XMEadyrDLkKZgPtp16bAwTYBPjr5C3lw2OW3C0XHUA20riJA8XbPgzE6L27lNQ0oR1M/06IOzMFh5s2Z+fPpUUJnbMz/AA8NlnY5LRAL9wzQMTGw88yvbC7dAu4g//1PXbcJJ2rxiX2fvAFJDEXzTwC/aiMFx2o8ZsOMhq8tnMcMbBdc7skt4HXdDagW8ub9ZRz34NyE7RSE6V2dvP92vRAoCrYbTlJM2xaJSNSwrk56Iv4I/JV74jlB6z7vWihwyipd6ePVuLft0Ot9nT15Osk+41P68G+gqaGMneWFTAOjJNwz+Qs4JKXQPIkmDjX3WWs="
 
-jobs:
-  include:
-  - stage: docker release
-    script: echo "Deploying Docker image"
-    deploy:
-      provider: script
-      script: bash scripts/docker-deploy.sh
-      skip_cleanup: true
-      on:
-        repo: outsideris/slack-invite-automation
-        tags: true
