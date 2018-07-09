@@ -1,0 +1,99 @@
+{
+	"AWSTemplateFormatVersion": "2010-09-09",
+	"Transform": "AWS::Serverless-2016-10-31",
+	"Description": "Slack Inviter",
+	"Parameters": {
+		"CommunityName": {
+			"Type": "String",
+			"Description": "Name of your Slack community (e.g., \"Example Team\")"
+		},
+		"SlackUrl": {
+			"Type": "String",
+			"Description": "URL host for your Slack community (e.g., \"exampleteam.slack.com\")"
+		},
+		"SlackToken": {
+			"Type": "String",
+			"NoEcho": true,
+			"Description": "Slack access token"
+		},
+		"InviteToken": {
+			"Type": "String",
+			"Description": "Optional invite token"
+		},
+		"RecaptchaSiteKey": {
+			"Type": "String",
+			"Description": "Optional Recaptcha site key"
+		},
+		"RecaptchaSecretKey": {
+			"Type": "String",
+			"NoEcho": true,
+			"Description": "Optional Recaptcha secret key"
+		},
+		"Locale": {
+			"Type": "String",
+			"Description": "Optional locale string (e.g., \"it\")"
+		}
+	},
+	"Resources": {
+		"SlackInviterApi": {
+			"Type": "AWS::Serverless::Api",
+			"Properties": {
+				"DefinitionUri": "api-swagger.json",
+				"StageName": "Express",
+				"Variables": {
+					"ExpressFunction": { "Ref": "ExpressFunction" }
+				}
+			}
+		},
+		"ExpressFunction": {
+			"Type": "AWS::Serverless::Function",
+			"Properties": {
+				"FunctionName": { "Fn::Sub": "${AWS::StackName}-Express" },
+				"Description": "Express API handler",
+				"CodeUri": "build/",
+				"Handler": "lambda.handler",
+				"Runtime": "nodejs8.10",
+				"MemorySize": 1024,
+				"Timeout": 10,
+				"Tracing": "Active",
+				"Policies": ["AWSXrayWriteOnlyAccess"],
+				"Environment": {
+					"Variables": {
+						"COMMUNITY_NAME": { "Ref": "CommunityName" },
+						"SLACK_URL": { "Ref": "SlackUrl" },
+						"SLACK_TOKEN": { "Ref": "SlackToken" },
+						"INVITE_TOKEN": { "Ref": "InviteToken" },
+						"RECAPTCHA_SITE": { "Ref": "RecaptchaSiteKey" },
+						"RECAPTCHA_SECRET": { "Ref": "RecaptchaSecretKey" },
+						"LOCALE": { "Ref": "Locale" }
+					}
+				},
+				"Events": {
+					"ExpressProxyApiRoot": {
+						"Type": "Api",
+						"Properties": {
+							"RestApiId": { "Ref": "SlackInviterApi" },
+							"Path": "/",
+							"Method": "ANY"
+						}
+					},
+					"ExpressProxyApiGreedy": {
+						"Type": "Api",
+						"Properties": {
+							"RestApiId": { "Ref": "SlackInviterApi" },
+							"Path": "/{proxy+}",
+							"Method": "ANY"
+						}
+					}
+				}
+			}
+		}
+	},
+	"Outputs": {
+		"Url": {
+			"Value": {
+				"Fn::Sub": "https://${SlackInviterApi}.execute-api.${AWS::Region}.amazonaws.com/${SlackInviterApi.Stage}/"
+			}
+		}
+	}
+}
