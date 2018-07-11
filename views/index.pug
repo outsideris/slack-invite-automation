@@ -16,12 +16,12 @@ html
         .content
           .information
             form(method="POST", action="invite")#join-form.form
-              input(type="email", name="email", autofocus, placeholder="#{__('ENTER_EMAIL')}")#slack-email.field
+              input(type="email", name="email", autofocus, placeholder=__('ENTER_EMAIL'))#slack-email.field
               if tokenRequired
-                input(type="text", name="token", placeholder="#{__('ENTER_TOKEN')}")#slack-token.field
+                input(type="text", name="token", placeholder=__('ENTER_TOKEN'))#slack-token.field
               input(type="submit", value="Join").submit
               if !!recaptchaSiteKey
-                div(class="g-recaptcha", data-sitekey="#{recaptchaSiteKey}")
+                div(class="g-recaptcha", data-sitekey=recaptchaSiteKey)
     if !!recaptchaSiteKey
        script(src='https://www.google.com/recaptcha/api.js')
     script.
