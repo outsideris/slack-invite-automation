@@ -13,6 +13,11 @@ html
           h1
             strong #{community}
           h2 #{__('HEADER', community)}
+          br
+          h2
+            | By joining our slack you agree to follow the 
+            a(href="https://devedmonton.com/code_of_conduct") Dev Edmonton Society Code of Conduct
+            | .
         .content
           .information
             form(method="POST", action="invite")#join-form.form
