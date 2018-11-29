@@ -1,5 +1,8 @@
 {
   "HEADER": "Enter your email below to join %s on Slack!",
+  "SPACER": "___",
+  "WELCOME": "Anyone with any amount of interest in Node.js is welcome to join.  This is meant to be a very open and collaborative community.  A real-time discussion place for literally anything Node.js :)",
+  "CODE_OF_CONDUCT": "Before joining please read our code of conduct at %s",
   "ENTER_EMAIL": "Enter Your Email Address",
   "ENTER_TOKEN": "Enter the invite token you were given",
   "TITLE": "Join the %s community on Slack!"

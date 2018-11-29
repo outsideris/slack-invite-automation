@@ -1,8 +1,8 @@
 module.exports = {
   // your community or team name to display on join page.
-  community: process.env.COMMUNITY_NAME || 'YOUR-TEAM-NAME',
+  community: process.env.COMMUNITY_NAME || 'Node Slackers',
   // your slack team url (ex: socketio.slack.com)
-  slackUrl: process.env.SLACK_URL || 'YOUR-TEAM.slack.com',
+  slackUrl: process.env.SLACK_URL || 'node-js.slack.com',
   // access token of slack
   // see https://github.com/outsideris/slack-invite-automation#issue-token
   //
@@ -18,5 +18,6 @@ module.exports = {
   recaptchaSecretKey: process.env.RECAPTCHA_SECRET || null,
   // default locale
   locale: process.env.LOCALE || "en",
-  subpath: process.env.SUBPATH || "/"
+  subpath: process.env.SUBPATH || "/",
+  coc: process.env.CODE_OF_CONDUCT_URL || "CODE_OF_CONDUCT_URL"
 };
