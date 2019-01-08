@@ -10,6 +10,7 @@ const sanitize = require('sanitize');
 router.get('/', function(req, res) {
   res.setLocale(config.locale);
   res.render('index', { community: config.community,
+                        coc: config.coc,
                         tokenRequired: !!config.inviteToken,
                         recaptchaSiteKey: config.recaptchaSiteKey });
 });
@@ -34,6 +35,7 @@ router.post('/invite', function(req, res) {
           if (body.ok) {
             res.render('result', {
               community: config.community,
+              coc: config.coc,
               message: 'Success! Check &ldquo;'+ req.body.email +'&rdquo; for an invite from Slack.'
             });
           } else {
