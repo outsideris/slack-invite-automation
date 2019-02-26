@@ -142,10 +142,17 @@ There are two ways to issue the access token.
 
     ![](screenshots/oauth4.gif)
 
-1. Visit <https://slack.com/oauth/authorize?&client_id=CLIENT_ID&team=TEAM_ID&install_redirect=install-on-team&scope=admin+client> in your browser and authorize it.
-    * It authorizes the `client` permission. Otherwise, you can see `{"ok":false,"error":"missing_scope","needed":"client","provided":"admin"}` error.
+1. Visit <https://slack.com/oauth/authorize?&client_id=CLIENT_ID&team=TEAM_ID&install_redirect=install-on-team&scope=admin+client> in your browser and authorize your app.
+    * This form requires the `client` permission. Otherwise, you can see `{"ok":false,"error":"missing_scope","needed":"client","provided":"admin"}` error.
     * Your `TEAM_ID` is the subdomain for your slack team, e.g. myteam.slack.com - your TEAM_ID is `myteam`.
     * Your `CLIENT_ID` found in "Basic Information" section for your App.
+    * You will be shown a `Installed App Settings > OAuth Tokens for Your Team` screen.
+    * You can test auto invites with curl by providing the `OAuth Access Token`.
+    ```sh
+    curl -X POST 'https://myteam.slack.com/api/users.admin.invite' \
+   --data 'email=test@email.com&token=OAuthAccessToken&set_active=true' \
+   --compressed
+   ```
 
     ![](screenshots/basic_info-client_id.png)
 
