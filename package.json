@@ -7,15 +7,15 @@
   },
   "dependencies": {
     "body-parser": "^1.18.0",
-    "cookie-parser": "^1.4.0",
-    "debug": "^3.1.0",
+    "cookie-parser": "^1.4.4",
+    "debug": "^3.2.6",
     "dotenv": "^5.0.1",
-    "express": "^4.13.0",
+    "express": "^4.16.4",
     "i18n": "^0.8.3",
-    "morgan": "^1.6.0",
+    "morgan": "^1.9.1",
     "pug": "^2.0.0-rc.4",
-    "request": "^2.62.0",
-    "serve-favicon": "^2.3.0",
-    "sanitize": "^2.1.0"
+    "request": "^2.88.0",
+    "sanitize": "^2.1.0",
+    "serve-favicon": "^2.3.0"
   }
 }

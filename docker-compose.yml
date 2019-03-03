@@ -1,0 +1,29 @@
+version: "3.2"
+services:
+  slackin:
+    environment:
+      - COMMUNITY_NAME=$COMMUNITY_NAME
+      - SLACK_URL=$SLACK_URL
+      - SLACK_TOKEN=$SLACK_TOKEN
+      - INVITE_TOKEN=$INVITE_TOKEN
+      - RECAPTCHA_SITE=$RECAPTCHA_SITE
+      - RECAPTCHA_SECRET=$RECAPTCHA_SECRET
+      - LOCALE=$LOCALE
+      - SUBPATH=$SUBPATH
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: slackin
+    ports:
+      - target: 3000
+        published: 2234
+        protocol: tcp
+        mode: host
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+        delay: 1s
+      restart_policy:
+        condition: on-failure
+        delay: 5s
