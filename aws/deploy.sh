@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # "set -e" makes it so if any step fails, the script aborts:
-set -e
+#set -e
 
 cd "${BASH_SOURCE%/*}"
 source ./config.sh
@@ -39,9 +39,9 @@ aws cloudformation deploy \
 	CommunityName="${CommunityName}" \
 	SlackUrl="${SlackUrl}" \
 	SlackToken="${SlackToken}" \
-	InviteToken="${InviteToken}" \
-	RecaptchaSiteKey="${RecaptchaSiteKey}" \
-	RecaptchaSecretKey="${RecaptchaSecretKey}" \
+	InviteToken="" \
+	RecaptchaSiteKey="" \
+	RecaptchaSecretKey="" \
 	Locale="${Locale}"
 
 Url=$(aws cloudformation describe-stacks --stack-name ${StackName} | grep OutputValue | cut -f 4 -d'"')
