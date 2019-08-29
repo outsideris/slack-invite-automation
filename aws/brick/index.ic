@@ -1,0 +1,36 @@
+from iclab import simple
+from . import assets
+
+
+@resource
+def brick(
+    community_name,
+    slack_url,
+    slack_token,
+    invite_token="",
+    recaptcha_site_key="",
+    recaptcha_secret_key="",
+    locale="en",
+):
+    api = simple.api("api", "express", "0.1.2")
+    func = simple.function(
+        "func",
+        "nodejs8.10",
+        assets["lambda.zip"],
+        handler="lambda.handler",
+        memory_size=1024,
+        timeout=10,
+        environ=dict(
+            COMMUNITY_NAME=community_name,
+            SLACK_URL=slack_url,
+            SLACK_TOKEN=slack_token,
+            INVITE_TOKEN=invite_token,
+            RECAPTCHA_SITE=recaptcha_site_key,
+            RECAPTCHA_SECRET=recaptcha_secret_key,
+            LOCALE=locale,
+        ),
+    )
+    func.http(api, "any", "/{proxy+}", binary_media="*/*")
+    func.http(api, "any", "/", binary_media="*/*")
+
+    return dict(api=dict(id=api["api"]["ref"], url=f'{api["url"]}/'))
