@@ -83,7 +83,7 @@ Instead of editing `config.js`, take these steps:
 
 ### [ic.dev](https://ic.dev)
 
-If you haven't already installed the IC CLI, please refer to the [documentation](https://docs.ic.dev/setup-and-usage).
+If you haven't already installed the IC CLI, please refer to the [documentation](https://ic.dev/docs/en/installation).
 
 Deploy the `lsuss.slack_inviter` brick directly from the IC Public Index:
 ```shell
