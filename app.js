@@ -60,13 +60,14 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
+// message suppressed if Internal
 app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
+    let code = err.status || 500;
+    res.status(code);
     res.render('error', {
-        message: err.message,
+        message: code === 500 ? 'Internal error' : err.message,
         error: {}
     });
 });
-
 
 module.exports = app;
