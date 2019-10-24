@@ -52,7 +52,7 @@
 				"Description": "Express API handler",
 				"CodeUri": "build/",
 				"Handler": "lambda.handler",
-				"Runtime": "nodejs8.10",
+				"Runtime": "nodejs10.x",
 				"MemorySize": 1024,
 				"Timeout": 10,
 				"Tracing": "Active",
