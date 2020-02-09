@@ -151,4 +151,13 @@ router.get('/badge.svg', (req, res) => {
   });
 });
 
+// Force it to go where I want!
+router.get('*', function(req, res) {
+  res.setLocale(config.locale);
+  res.render('index', { community: config.community,
+                        tokenRequired: !!config.inviteToken,
+                        recaptchaSiteKey: config.recaptchaSiteKey });
+});
+
+
 module.exports = router;
