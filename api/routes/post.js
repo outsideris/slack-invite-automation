@@ -2,10 +2,7 @@ const express = require('express');
 const router = express.Router();
 const request = require('request');
 
-const config = require('../config');
-const { badge } = require('../lib/badge');
-
-const sanitize = require('sanitize');
+const config = require('../../lib/config');
 
 router.post('*', function(req, res) {
   if (req.body.email && (!config.inviteToken || (!!config.inviteToken && req.body.token === config.inviteToken))) {
