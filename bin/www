@@ -14,7 +14,7 @@ try {
 /**
 * Module dependencies.
 */
-const app = require('../app');
+const app = require('../api/index.js');
 const debug = require('debug')('slack-invite-automation:server');
 const http = require('http');
 
