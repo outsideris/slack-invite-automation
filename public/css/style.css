@@ -6,7 +6,7 @@ body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input
 html,body{
 margin:0;
 padding:0;
-font-family: 'Open Sans', sans-serif;
+font-family: "Graphik", sans-serif, Arial, Helvetica, sans-serif !important;
 background: #fff url(../images/bg.jpg) center top no-repeat;
 background-size: cover;
 height: 100%;
@@ -40,7 +40,7 @@ float: left;
 
 
 h1{
-font-family: 'Open Sans', sans-serif;
+font-family: "Graphik", sans-serif, Arial, Helvetica, sans-serif !important;
 color: #fff;
 text-align: center;
 font-size: 50px;
@@ -98,7 +98,7 @@ width: 448px;
 -webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;
 border: none;
 font-style: italic;
-font-family: 'Lato', sans-serif;
+font-family: "Graphik", sans-serif, Arial, Helvetica, sans-serif !important;
 font-size: 16px;
 color: #ffffff;
 padding: 15px;
@@ -132,7 +132,7 @@ padding: 3px 10px;
 -webkit-border-radius: 30px;-moz-border-radius: 30px;border-radius: 30px;
 background: #ffffff;
 border: none;
-font-family: 'Lato', sans-serif;
+font-family: "Graphik", sans-serif, Arial, Helvetica, sans-serif !important;
 font-size: 14px;
 font-weight: bold;
 cursor: pointer;
