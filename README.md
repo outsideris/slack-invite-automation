@@ -131,13 +131,7 @@ $ docker run -it --rm -e COMMUNITY_NAME="YOUR-TEAM-NAME" -e SLACK_URL="YOUR-TEAM
 ## Issue token
 **You should generate the token in admin user, not owner.** If you generate the token in owner user, a `missing_scope` error may occur.
 
-There are two ways to issue the access token.
-
-### Legacy tokens
-1. Visit <https://api.slack.com/custom-integrations/legacy-tokens>.
-1. Click `Create token`.
-
-    ![](screenshots/legacy-token.gif)
+Note: the old Legacy Token option is no longer available.
 
 ### OAuth tokens
 1. Visit <https://api.slack.com/apps> and Create New App.

@@ -13,7 +13,7 @@
       "value": "YOUR-TEAM.slack.com"
     },
     "SLACK_TOKEN": {
-      "description": "access token of slack, You can generate it in https://api.slack.com/web#auth",
+      "description": "access token of slack.  See https://github.com/outsideris/slack-invite-automation#issue-token",
       "value": ""
     },
     "INVITE_TOKEN": {
