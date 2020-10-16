@@ -150,7 +150,7 @@ There are two ways to issue the access token.
 
 1. In "OAuth & Permissions" page, select `admin` scope under "Permission Scopes" menu and save changes.
 
-    ![](screenshots/oauth3.gif)
+    ![](screenshots/oauth3.png)
 
 1. Click "Install App to Workspace".
 
