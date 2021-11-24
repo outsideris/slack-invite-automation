@@ -1,5 +1,6 @@
 community_name = "Your Community Name"
 slack_url = "yourcommunity.slack.com"
+slack_channel = "ABCD10EFG"
 slack_token = "xoxp-xxx-xxx-xxx-xxx"
 # invite_token = util.sensitive("")
 # recaptcha_site_key = util.sensitive("")

@@ -11,6 +11,10 @@
 			"Type": "String",
 			"Description": "URL host for your Slack community (e.g., \"exampleteam.slack.com\")"
 		},
+		"SlackChannel": {
+			"Type": "String",
+			"Description": "Your slack admin channel or admin userId (e.g., \"C8F1JAG61\")"
+		},
 		"SlackToken": {
 			"Type": "String",
 			"NoEcho": true,
@@ -61,6 +65,7 @@
 					"Variables": {
 						"COMMUNITY_NAME": { "Ref": "CommunityName" },
 						"SLACK_URL": { "Ref": "SlackUrl" },
+						"SLACK_CHANNEL": { "Ref": "SlackChannel" },
 						"SLACK_TOKEN": { "Ref": "SlackToken" },
 						"INVITE_TOKEN": { "Ref": "InviteToken" },
 						"RECAPTCHA_SITE": { "Ref": "RecaptchaSiteKey" },

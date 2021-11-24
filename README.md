@@ -148,7 +148,7 @@ There are two ways to issue the access token.
 
     ![](screenshots/oauth2.gif)
 
-1. In "OAuth & Permissions" page, select `admin` scope under "Permission Scopes" menu and save changes.
+1. In "OAuth & Permissions" page, select `chat:write` scope under "Permission Scopes" menu and save changes.
 
     ![](screenshots/oauth3.gif)
 
@@ -156,19 +156,21 @@ There are two ways to issue the access token.
 
     ![](screenshots/oauth4.gif)
 
-1. Visit <https://slack.com/oauth/authorize?&client_id=CLIENT_ID&team=TEAM_ID&install_redirect=install-on-team&scope=admin+client> in your browser and authorize your app.
-    * This form requires the `client` permission. Otherwise, you can see `{"ok":false,"error":"missing_scope","needed":"client","provided":"admin"}` error.
-    * Your `TEAM_ID` is the subdomain for your slack team, e.g. myteam.slack.com - your TEAM_ID is `myteam`.
-    * Your `CLIENT_ID` found in "Basic Information" section for your App.
-    * You will be shown a `Installed App Settings > OAuth Tokens for Your Team` screen.
-    * You can test auto invites with curl by providing the `OAuth Access Token`.
-    ```sh
-    curl -X POST 'https://myteam.slack.com/api/users.admin.invite' \
-   --data 'email=test@email.com&token=OAuthAccessToken&set_active=true' \
-   --compressed
-   ```
 
-    ![](screenshots/basic_info-client_id.png)
+## Slack Channel Id
+Since Slack no longer allows access to the invitation API endpoint unless you are on a enterprise setup the easiest way forward is to message a workspace admin and have them manually invite people. To ease this we let our webapp post a message into a Direct Message to an admin, or to a admin-shared channel.
+
+### Single admin
+To find out you channelId for a workspace admin DM. Open the profile of this admin in slack. Press the more button (…), then "Copy member ID". Set this value in your environment variable: `SLACK_CHANNEL`.
+If this is no longer up to date, [maybe this help post can help you out:](https://slack.com/help/articles/360003827751-Create-a-link-to-a-members-profile-)
+
+
+### Admin-invite-channel
+***Don't forget to invite your admin-user to the admin-channel***
+
+Create or use an existing admin-channel with relevant workspace admins included. In the slack client, open the channel, click the downfacing chevron next to the channel name. Next scroll all the way down in the about tab, then copy the Channel ID. Set this value in your environment variable: `SLACK_CHANNEL`
+If this is no longer up to date, [maybe this help post can help you out:](https://www.wikihow.com/Find-a-Channel-ID-on-Slack-on-PC-or-Mac)
+
 
 ## Badge
 

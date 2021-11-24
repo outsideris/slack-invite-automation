@@ -38,6 +38,7 @@ aws cloudformation deploy \
 	--parameter-overrides \
 	CommunityName="${CommunityName}" \
 	SlackUrl="${SlackUrl}" \
+	SlackChannel="${SlackChannel}" \
 	SlackToken="${SlackToken}" \
 	InviteToken="${InviteToken}" \
 	RecaptchaSiteKey="${RecaptchaSiteKey}" \
