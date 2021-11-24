@@ -12,6 +12,9 @@ applications:
     # your slack team url (ex: socketio.slack.com)
     SLACK_URL: socketio.slack.com
 
+    # your slack workspace admin user id or admin channel id
+    SLACK_CHANNEL: '<channelid>'
+
     # access token of slack
     # You can generate it in https://api.slack.com/web#auth
     # You should generate the token in admin user, not owner.
@@ -25,5 +28,5 @@ applications:
 
     # an optional security measure - if it is set, then that token will be required to get invited.
     # INVITE_TOKEN: <token>
-    
+
     LOCALE: en

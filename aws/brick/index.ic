@@ -6,6 +6,7 @@ from . import assets
 def brick(
     community_name,
     slack_url,
+    slack_channel,
     slack_token,
     invite_token="",
     recaptcha_site_key="",
@@ -22,6 +23,7 @@ def brick(
         timeout=10,
         environ=dict(
             COMMUNITY_NAME=community_name,
+            SLACK_CHANNEL=slack_channel,
             SLACK_URL=slack_url,
             SLACK_TOKEN=slack_token,
             INVITE_TOKEN=invite_token,

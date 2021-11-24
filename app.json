@@ -8,6 +8,10 @@
       "description": "Your team name",
       "value": "YOUR TEAM NAME"
     },
+    "SLACK_CHANNEL": {
+      "description": "Your slack admin channel or admin userId (ex: C8F1JAG61)",
+      "value": "YOUR-CHANNEL-ID"
+    },
     "SLACK_URL": {
       "description": "Your slack url(ex: socketio.slack.com)",
       "value": "YOUR-TEAM.slack.com"

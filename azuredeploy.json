@@ -45,6 +45,9 @@
         "slackUrl": {
             "type": "string"
         },
+        "slackChannel": {
+            "type": "string"
+        },
         "slackToken": {
             "type": "string"
         },
@@ -134,6 +137,7 @@
                     "properties": {
                         "COMMUNITY_NAME": "[parameters('communityName')]",
                         "SLACK_URL": "[parameters('slackUrl')]",
+                        "SLACK_CHANNEL": "[parameters('slackChannel')]",
                         "SLACK_TOKEN": "[parameters('slackToken')]",
                         "INVITE_TOKEN": "[parameters('inviteToken')]",
                         "RECAPTCHA_SITE": "[parameters('recaptchaSite')]",
