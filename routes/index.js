@@ -9,6 +9,9 @@ const sanitize = require('sanitize');
 
 router.get('/', function(req, res) {
   res.setLocale(config.locale);
+  if (config.strictTransportSecurity) {
+    res.set('Strict-Transport-Security', config.strictTransportSecurity);
+  }
   res.render('index', { community: config.community,
                         tokenRequired: !!config.inviteToken,
                         recaptchaSiteKey: config.recaptchaSiteKey });
